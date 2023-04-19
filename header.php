@@ -8,14 +8,14 @@
                 <img src="img/logo.png" class=" rounded-circle" alt="logo" width="70">
             </a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" href="product.php">Product</a>
+                <li class="nav-item fw-bold fs-4 mx-5" >
+                    <a class="nav-link  active" style="color: #dac991" href="product.php">Product</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                <li class="nav-item fw-bold fs-4 mx-5" >
+                    <a class="nav-link" style="color: #dac991" href="#">Link</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
+                <li class="nav-item fw-bold fs-4 mx-5" >
+                    <a class="nav-link" style="color: #dac991" href="#">Disabled</a>
                 </li>
             </ul>
         </div>
