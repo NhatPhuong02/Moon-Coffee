@@ -1,8 +1,8 @@
 <?php
 // Phuong's config
-$mysqli = new mysqli("localhost","root","","moon coffee", 3306);
+$mysqli = new mysqli("localhost","root","","moon_coffee", 3306);
 
-if($mysqli -> connect_errno){
+if ($mysqli -> connect_errno){
     header("location: db_error.php");
     exit(1);
 }

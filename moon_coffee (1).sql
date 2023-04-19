@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Cấu trúc bảng cho bảng `ingredient`
 --
 
-CREATE TABLE `ingredient` (
+CREATE TABLE IF NOT EXISTS `moon_coffee`.`ingredient` (
   `Product_p_id` int(255) NOT NULL,
   `i_name` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
   `i_quantity` int(100) NOT NULL,
@@ -40,10 +40,10 @@ CREATE TABLE `ingredient` (
 -- Cấu trúc bảng cho bảng `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE IF NOT EXISTS `moon_coffee`. `product` (
   `p_id` int(100) NOT NULL COMMENT 'id sản phẩm',
-  `p_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL COMMENT 'tên sản phẩm ',
-  `p_price` int(255) DEFAULT NULL COMMENT 'giá sản phẩm'
+  `p_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL COMMENT 'tên sản phẩm ',
+  `p_price` int(255) NOT NULL COMMENT 'giá sản phẩm'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_vietnamese_ci;
 
 --
@@ -89,20 +89,8 @@ INSERT INTO `product` (`p_id`, `p_name`, `p_price`) VALUES
 (36, 'Mango  yogurt smoothie', 30000),
 (37, 'Coffe đá xay caramel', 30000),
 (38, 'Yogurt natural', 30000),
-(39, 'Golden yogurt ', 30000),
-(41, 'Soda Vận hên', 30000),
-(42, 'Soda mặn mà', 30000),
-(43, 'Soda phiêu bồng', 30000),
-(44, 'Lime juice', 30000),
-(45, 'Choco smoothie', 30000),
-(46, 'Greentea smoothie', 30000),
-(47, 'Capu smoothie', 30000),
-(48, 'Mocha smoothie', 30000),
-(49, 'Blueberry  yogurt smoothie', 30000),
-(50, 'Mango  yogurt smoothie', 30000),
-(51, 'Coffe đá xay caramel', 30000),
-(52, 'Yogurt natural', 30000),
-(53, 'Golden yogurt ', 30000);
+(39, 'Golden yogurt ', 30000);
+
 
 --
 -- Chỉ mục cho các bảng đã đổ
