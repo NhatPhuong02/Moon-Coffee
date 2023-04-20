@@ -3,10 +3,13 @@
 
     $p_id = $_GET["p_id"];
 
-    $query = "DELETE FROM product p, ingredient i WHERE p.p_id = {$p_id} AND i.Product_p_id = {$p_id}";
-    $result = $mysqli->query($query);
+    $query_ingredient = "DELETE FROM ingredient WHERE Product_p_id = '{$p_id}'";
+    $result_ingredient = $mysqli->query($query_ingredient);
 
-    if ($result){
+    $query_product = "DELETE FROM product WHERE p_id = '{$p_id}'";
+    $result_product = $mysqli->query($query_product);
+
+    if ($result_ingredient && $result_product ) {
         header("Location: product.php");
     }
 ?> 

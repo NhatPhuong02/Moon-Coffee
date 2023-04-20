@@ -51,7 +51,10 @@
                         <td class="text-center">
                             <?php echo number_format($row["p_price"], "0", ",", "."); ?>
                         </td>
-                        <td>
+                        <td><a href="delete_product.php?p_id=<?php echo $row["p_id"] ?>"
+                                class="btn btn-sm btn-primary">View</a>
+                            <a href="delete_product.php?p_id=<?php echo $row["p_id"] ?>"
+                                class="btn btn-sm btn-outline-success">Edit</a>
                             <a href="delete_product.php?p_id=<?php echo $row["p_id"] ?>"
                                 class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
