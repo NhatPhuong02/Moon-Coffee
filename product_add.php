@@ -101,27 +101,27 @@
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 6:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id , i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 5:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id , i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 4:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id , i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 3:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id , i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 2:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id , i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     default:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id , i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                 }
@@ -186,40 +186,21 @@
                     <!-- -------------------------------------------------------------- -->
                     <?php for ($x = 1; $x < $num + 1; $x++) { ?>
                         <div class="row pt-3">
+                            <div class="col-1 text-center" style="width: 5.33333333%;">
+                                <span class="btn btn-success"><i class="fa-solid fa-flip text-white" ><?=$x?></i>
+                                </span>
+                            </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Ingredients</span>
                                     <select class="form-select" id="ingredients" name="i_name_<?= $x ?>">
                                         <option selected>Choose...</option>
-                                        <option value="BotKemSua">Bột kem sữa </option>
-                                        <option value="BotMatchaCozy">Bột matcha cozy</option>
-                                        <option value="CaPheHat">cà phê hạt</option>
-                                        <option value="CaPhePhin">Cà phê phin</option>
-                                        <option value="Cam">Cam </option>
-                                        <option value="ComDuaSay">Cơm dừa sấy</option>
-                                        <option value="DaoNgam">Đào ngâm </option>
-                                        <option value="Duong">Đường</option>
-                                        <option value="DuongNuoc">Đường nước</option>
-                                        <option value="GasWhipping">gas whipping</option>
-                                        <option value="HongTraWonderfull">Hồng trà wonderfull</option>
-                                        <option value="LucTraWonderfull">Lục trà wonderfull</option>
-                                        <option value="LyNhua">Ly nhựa</option>
-                                        <option value="MutTraiCayCherry">Mứt trái cây cherry</option>
-                                        <option value="MutTraiCayDuaLuoi">Mứt trái cây dưa lưới</option>
-                                        <option value="MutTraiCayVietQuoc">Mứt trái cây Việt Quốc</option>
-                                        <option value="MutTraiCayXoai">Mứt trái cây xoài</option>
-                                        <option value="SinhToBerrinoVai">sinh tố berrino Vải</option>
-                                        <option value="SuaChua">Sữa chua </option>
-                                        <option value="SuaDac">Sữa đặc </option>
-                                        <option value="SuaTuoi">Sữa tươi </option>
-                                        <option value="SyrupMoninCoconut">Syrup monin coconut</option>
-                                        <option value="SyrupMoninDuaHau">Syrup monin dưa hấu</option>
-                                        <option value="TraAhrmadBaTuoc">Trà ahrmad bá tước</option>
-                                        <option value="TraDaoCosy">Trà đào Cosy</option>
-                                        <option value="TranChauTden">Trân châu tđen</option>
-                                        <option value="TranChauTrang">Trân châu trắng </option>
-                                        <option value="VaiLon">Vải lon</option>
-                                        <option value="WhippingCream">Whipping cream</option>
+                                        <?php
+                                        $query_id = "SELECT * FROM ingredient_defaut";
+                                        $result_id = $mysqli->query($query_id);
+                                        while ($row_id = $result_id->fetch_array()) { ?>
+                                            <option value="<?php echo $row_id["id_id"] ?>"><?php echo $row_id["id_name"] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -230,7 +211,6 @@
                                     <span class="input-group-text" id="inputGroup-sizing-default">Quantity</span>
                                     <input name="i_quantity_<?= $x ?>" type="text" class="form-control"
                                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-
                                 </div>
                             </div>
                             <div class="col-3">
@@ -243,10 +223,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-1">
-                                <div class="btn btn-danger"><i class="fa-solid fa-minus fa-flip" style="color: #fff;"></i>
-                                </div>
-                            </div>
+                            
                         </div>
                     <?php } ?>
                 </div>

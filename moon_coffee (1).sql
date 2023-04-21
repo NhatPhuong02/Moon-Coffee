@@ -85,8 +85,8 @@ INSERT INTO `product` (`p_id`, `p_name`, `p_price`) VALUES
 (32, 'Greentea smoothie', 30000),
 (33, 'Capu smoothie', 30000),
 (34, 'Mocha smoothie', 30000),
-(35, 'Blueberry  yogurt smoothie', 30000),
-(36, 'Mango  yogurt smoothie', 30000),
+(35, 'Blueberry yogurt smoothie', 30000),
+(36, 'Mango yogurt smoothie', 30000),
 (37, 'Coffe đá xay caramel', 30000),
 (38, 'Yogurt natural', 30000),
 (39, 'Golden yogurt ', 30000);

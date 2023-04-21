@@ -50,7 +50,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $query_ingredient = "SELECT * FROM ingredient  WHERE Product_p_id = {$p_id}";
+                            $query_ingredient = "SELECT i.*, id.* FROM ingredient i, ingredient_defaut id  WHERE Product_p_id = {$p_id} AND id.id_id = Ingredient_defaut_id_id";
                             $result_ingredient = $mysqli->query($query_ingredient);
                             ?>
                             <?php $i = 1;
@@ -60,7 +60,7 @@
                                         <?php echo $i++; ?>
                                     </td>
                                     <td class="w-25">
-                                        <?php echo $ingredient_row["i_name"]; ?>
+                                        <?php echo $ingredient_row["id_name"]; ?>
                                     </td>
                                     <td class="text-center">
                                         <?php echo $ingredient_row["i_quantity"]; ?>
@@ -75,18 +75,17 @@
                                 </tr>
                             <?php } ?>
                         </tbody>
+
+
                     </table>
 
                 </div>
                 <ul class="list-unstyled mb-3 mb-md-0">
-
                 </ul>
-                <div class="form-amount">
+                <div class="form-amount text-end">
                     <input type="hidden" class="form-control" id="m_id" name="m_id" value="<?php echo $m_id ?>">
-
-                    <button class="btn btn-success w-100" type="submit" title="add to cart" name="addtocart">
-
-                    </button>
+                    <button class="btn btn-success w-25" type="submit" title="add to cart" name="addtocart">Edit</button>
+                    <button class="btn btn-danger w-25" type="submit" title="add to cart" name="addtocart">Delete</button>
                 </div>
             </div>
         </div>
