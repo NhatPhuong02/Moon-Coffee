@@ -125,7 +125,6 @@
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                 }
-
                 if ($result_ingredient) {
                     header("location: product.php");
                 } else {
@@ -148,7 +147,7 @@
     ?>
     <?php if ($value == 1) { ?>
         <div class="container pt-5">
-            <form action="add_product.php" method="POST">
+            <form action="product_add.php" method="POST">
                 <div class="form_input_product px-3 rounded-3" style="background-color: rgba(84, 45, 33,0.7);">
                     <div class="row mt-5 pt-3">
                         <div class="col-6">
@@ -182,7 +181,7 @@
         </div>
     <?php } else { ?>
         <div class="container pt-5">
-            <form action="add_product.php" method="POST">
+            <form action="product_add.php" method="POST">
                 <div class="form_input_ingredients px-3 rounded-3" style="background-color: rgba(84, 45, 33,0.7);">
                     <!-- -------------------------------------------------------------- -->
                     <?php for ($x = 1; $x < $num + 1; $x++) { ?>

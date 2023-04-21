@@ -18,9 +18,8 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Product</li>
-                <li class="ms-auto"> <a href="add_product.php?p_value=1" class="btn btn-success">Add Product</a></li>
+                <li class="ms-auto"> <a href="product_add.php?p_value=1" class="btn btn-success">Add Product</a></li>
             </ol>
-
         </nav>
 
         <table class="mt-5 table rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
@@ -51,11 +50,11 @@
                         <td class="text-center">
                             <?php echo number_format($row["p_price"], "0", ",", "."); ?>
                         </td>
-                        <td><a href="delete_product.php?p_id=<?php echo $row["p_id"] ?>"
+                        <td><a href="product_view.php?p_id=<?php echo $row["p_id"] ?>"
                                 class="btn btn-sm btn-primary">View</a>
-                            <a href="delete_product.php?p_id=<?php echo $row["p_id"] ?>"
+                            <a href="product_edit.php?p_id=<?php echo $row["p_id"] ?>"
                                 class="btn btn-sm btn-outline-success">Edit</a>
-                            <a href="delete_product.php?p_id=<?php echo $row["p_id"] ?>"
+                            <a href="product_delete.php?p_id=<?php echo $row["p_id"] ?>"
                                 class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
                     </tr>
