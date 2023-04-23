@@ -7,7 +7,7 @@
     include("conn_db.php");
     $num;
     if (isset($_POST["add_confirm"])) {
-        $p_name = $_POST["p_name"];
+        $p_name = ucwords ($_POST["p_name"]);
         $p_price = (int) $_POST["p_price"];
         $num = $_POST["p_num"];
         $value = 0;
@@ -138,7 +138,7 @@
         }
     }
     ?>
-    <title>Welcome to Moon Coffee</title>
+    <title>Add Product</title>
 </head>
 
 <body>
@@ -217,8 +217,7 @@
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Units</label>
                                     <select class="form-select" id="inputGroupSelect01" name="i_unit_<?= $x ?>">
-                                        <option selected>Choose...</option>
-                                        <option value="g">G</option>
+                                        <option value="g" selected>G</option>
                                         <option value="ml">ML</option>
                                     </select>
                                 </div>

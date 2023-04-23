@@ -37,15 +37,14 @@
                 <br>
                 <div class="mt-0">
                     <div class="fs-3 mb-2 fw-bold"> Danh sách thành phần</div>
-                    <table
-                        class="table rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
+                    <table class="table rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
                         <thead class="bg-light">
                             <tr>
                                 <th scope="col-1">#</th>
                                 <th scope="col-4">Name</th>
                                 <th scope="col-4">Quantity</th>
                                 <th class="text-center" scope="col">Unit (g/ml)</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Cost</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -59,7 +58,7 @@
                                     <td>
                                         <?php echo $i++; ?>
                                     </td>
-                                    <td class="w-25">
+                                    <td class="w-50">
                                         <?php echo $ingredient_row["id_name"]; ?>
                                     </td>
                                     <td class="text-center">
@@ -75,17 +74,18 @@
                                 </tr>
                             <?php } ?>
                         </tbody>
-
-
                     </table>
-
+                    <div class="row bg-light mb-3 mx-1">
+                        <div class="col fs-3 text-center ps-0 fw-bold">Cost:</div>
+                        <div class="col fs-3 text-center pe-0 fw-bold"></div>
+                    </div>
                 </div>
-                <ul class="list-unstyled mb-3 mb-md-0">
-                </ul>
                 <div class="form-amount text-end">
                     <input type="hidden" class="form-control" id="m_id" name="m_id" value="<?php echo $m_id ?>">
-                    <button class="btn btn-success w-25" type="submit" title="add to cart" name="addtocart">Edit</button>
-                    <button class="btn btn-danger w-25" type="submit" title="add to cart" name="addtocart">Delete</button>
+                    <a href="product_edit.php?p_id=<?= $p_id ?>" class="btn btn-success w-25" type="submit"
+                        title="add to cart" name="addtocart">Edit</a>
+                    <a href="product_delete.php?p_id=<?= $p_id ?>" class="btn btn-danger w-25" type="submit"
+                        title="add to cart" name="addtocart">Delete</a>
                 </div>
             </div>
         </div>
