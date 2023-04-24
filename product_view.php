@@ -10,7 +10,9 @@
 </head>
 
 <body>
+
     <?php
+    $cost = 0;
     include("header.php");
     $p_id = $_GET["p_id"];
     $query_product = "SELECT p.* FROM product p  WHERE p.p_id = {$p_id}  LIMIT 0,1";
@@ -18,12 +20,14 @@
     $product_row = $result_product->fetch_array();
     ?>
     <div class="container px-5 py-4" id="shop-body">
-        <div class="row my-4">
-            <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
-                <i class="bi bi-arrow-left-square me-2"></i>Go back
-            </a>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 mb-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="product.php">Product</a></li>
+                <li class="breadcrumb-item active" aria-current="page">View Product</li>
+            </ol>
+        </nav>
+        <div class="row row-cols-1 row-cols-md-2 mb-5 mt-5">
             <div class="col mb-3 mb-md-0 logo">
                 <img src='img/logo.png' class="img-fluid rounded-25 float-start">
             </div>
@@ -42,14 +46,14 @@
                             <tr>
                                 <th scope="col-1">#</th>
                                 <th scope="col-4">Name</th>
-                                <th scope="col-4">Quantity</th>
+                                <th class="text-center" scope="col-4">Quantity</th>
                                 <th class="text-center" scope="col">Unit (g/ml)</th>
-                                <th scope="col">Cost</th>
+                                <th scope="col">Cost (VND)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $query_ingredient = "SELECT i.*, id.* FROM ingredient i, ingredient_defaut id  WHERE Product_p_id = {$p_id} AND id.id_id = Ingredient_defaut_id_id";
+                            $query_ingredient = "SELECT i.*, id.* FROM ingredient i, ingredient_defaut id  WHERE Product_p_id = {$p_id} AND id.id_id = Ingredient_defaut_id_id ORDER BY id_name ASC" ;
                             $result_ingredient = $mysqli->query($query_ingredient);
                             ?>
                             <?php $i = 1;
@@ -58,7 +62,7 @@
                                     <td>
                                         <?php echo $i++; ?>
                                     </td>
-                                    <td class="w-50">
+                                    <td class="w-25">
                                         <?php echo $ingredient_row["id_name"]; ?>
                                     </td>
                                     <td class="text-center">
@@ -68,8 +72,10 @@
                                         <?php echo $ingredient_row["i_unit"]; ?>
                                     </td>
                                     <td>
-                                        <a href="test.php?<?= "p_id=" . $p_id . "&i_id" . $ingredient_row["i_id"] ?>;"
-                                            class="btn btn-sm btn-primary">View</a>
+                                        <?php
+                                            $cost += $ingredient_row["i_quantity"]*($ingredient_row["id_import_price"] / $ingredient_row["id_import_quantity"]);
+                                            echo round($ingredient_row["i_quantity"]*($ingredient_row["id_import_price"] / $ingredient_row["id_import_quantity"]), 3);
+                                        ?>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -77,7 +83,7 @@
                     </table>
                     <div class="row bg-light mb-3 mx-1">
                         <div class="col fs-3 text-center ps-0 fw-bold">Cost:</div>
-                        <div class="col fs-3 text-center pe-0 fw-bold"></div>
+                        <div class="col fs-3 text-center pe-0 fw-bold"><?= number_format(round($cost,3), "0", ",", ".") ." VND"; ?></div>
                     </div>
                 </div>
                 <div class="form-amount text-end">

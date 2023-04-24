@@ -7,7 +7,7 @@
     include("conn_db.php");
     $num;
     if (isset($_POST["add_confirm"])) {
-        $p_name = ucwords ($_POST["p_name"]);
+        $p_name = ucwords($_POST["p_name"]);
         $p_price = (int) $_POST["p_price"];
         $num = $_POST["p_num"];
         $value = 0;
@@ -145,8 +145,15 @@
     <?php
     include("header.php");
     ?>
-    <?php if ($value == 1) { ?>
-        <div class="container pt-5">
+    <div class="container pt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="product.php">Product</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+            </ol>
+        </nav>
+        <?php if ($value == 1) { ?>
             <form action="product_add.php" method="POST">
                 <div class="form_input_product px-3 rounded-3" style="background-color: rgba(84, 45, 33,0.7);">
                     <div class="row mt-5 pt-3">
@@ -178,16 +185,16 @@
                     <button type="submit" class="btn btn-success w-25" name="add_confirm">Next</button>
                 </div>
             </form>
-        </div>
-    <?php } else { ?>
-        <div class="container pt-5">
+        <?php } else { ?>
             <form action="product_add.php" method="POST">
                 <div class="form_input_ingredients px-3 rounded-3" style="background-color: rgba(84, 45, 33,0.7);">
                     <!-- -------------------------------------------------------------- -->
                     <?php for ($x = 1; $x < $num + 1; $x++) { ?>
                         <div class="row pt-3">
                             <div class="col-1 text-center" style="width: 5.33333333%;">
-                                <span class="btn btn-success"><i class="fa-solid fa-flip text-white" ><?=$x?></i>
+                                <span class="btn btn-success"><i class="fa-solid fa-flip text-white">
+                                        <?= $x ?>
+                                    </i>
                                 </span>
                             </div>
                             <div class="col-5">
@@ -196,10 +203,11 @@
                                     <select class="form-select" id="ingredients" name="i_name_<?= $x ?>">
                                         <option selected>Choose...</option>
                                         <?php
-                                        $query_id = "SELECT * FROM ingredient_defaut";
+                                        $query_id = "SELECT * FROM ingredient_defaut GROUP BY id_name ASC";
                                         $result_id = $mysqli->query($query_id);
                                         while ($row_id = $result_id->fetch_array()) { ?>
-                                            <option value="<?php echo $row_id["id_id"] ?>"><?php echo $row_id["id_name"] ?></option>
+                                            <option value="<?php echo $row_id["id_id"] ?>"><?php echo $row_id["id_name"] ?>
+                                            </option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -222,15 +230,17 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                         </div>
                     <?php } ?>
                 </div>
                 <div class="row py-3 justify-content-center">
-                    <button type="submit" class="btn btn-success w-25" name="add_confirm_ingredient">Add Product</button>
+                    <button type="submit" class="btn btn-success w-25" name="add_confirm_ingredient">Add
+                        Product</button>
                 </div>
             </form>
         <?php } ?>
+    </div>
 </body>
 
 </html>

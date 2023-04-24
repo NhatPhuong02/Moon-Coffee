@@ -12,7 +12,7 @@
                     <a class="nav-link  active" style="color: #dac991" href="product.php">Product</a>
                 </li>
                 <li class="nav-item fw-bold fs-4 mx-5" >
-                    <a class="nav-link" style="color: #dac991" href="#">Link</a>
+                    <a class="nav-link" style="color: #dac991" href="ingredient.php">Ingredient</a>
                 </li>
                 <li class="nav-item fw-bold fs-4 mx-5" >
                     <a class="nav-link" style="color: #dac991" href="#">Disabled</a>

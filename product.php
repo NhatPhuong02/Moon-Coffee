@@ -18,10 +18,11 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Product</li>
+
                 <li class="ms-auto"> <a href="product_add.php?p_value=1" class="btn btn-success">Add Product</a></li>
             </ol>
         </nav>
-
+        <div class="fs-1 text-center fw-bold"><span>Bảng Sản Phẩm</span></div>
         <table class="mt-5 table rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
             <thead class="bg-light">
                 <tr>
@@ -33,7 +34,7 @@
                 </tr>
             </thead>
             <?php
-            $query = "SELECT * FROM product";
+            $query = "SELECT * FROM product ORDER BY p_name ASC";
             $result = $mysqli->query($query);
             ?>
             <tbody>
@@ -64,27 +65,6 @@
     </div>
 </body>
 
-<script>
-    function add_ingredient() {
-        //tạo phần tử p    
-        var add = document.createElement("p");
 
-        //tạo phần tử text
-        var node = document.createTextNode("Some new text");
-
-        //gắn node vào p
-        p.appendChild(node);
-
-        //Thay đổi một số thuộc tính của p
-        p.appendChild(node);
-        p.style.backgroundColor = 'red';
-        p.style.padding = "10px";
-        p.style.color = "white";
-
-        var div = document.getElementById("demo");
-        //gắn p vào div
-        div.appendChild(p);
-    }
-</script>
 
 </html>
