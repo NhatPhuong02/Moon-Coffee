@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 21, 2023 lúc 07:52 PM
+-- Thời gian đã tạo: Th4 24, 2023 lúc 02:00 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -39,9 +39,114 @@ CREATE TABLE `ingredient` (
 -- Đang đổ dữ liệu cho bảng `ingredient`
 --
 
-INSERT INTO `ingredient` (`i_id`, `Product_p_id`, `Ingredient_defaut_id_id`, `i_quantity`, `i_unit`) VALUES
-(10, 91, 1, 123, 'g'),
-(11, 91, 3, 123, 'g');
+INSERT INTO `ingredient` (`Product_p_id`, `Ingredient_defaut_id_id`, `i_quantity`, `i_unit`) VALUES
+(95, 4, 20, 'g'),
+(95, 9, 10, 'g'),
+(96, 20, 10, 'g'),
+(96, 4, 20, 'g'),
+(97, 3, 5, 'g'),
+(97, 21, 105, 'g'),
+(98, 3, 5, 'g'),
+(99, 4, 20, 'g'),
+(99, 20, 20, 'g'),
+(99, 21, 60, 'g'),
+(100, 3, 5, 'g'),
+(100, 21, 105, 'g'),
+(101, 27, 30, 'g'),
+(101, 12, 5, 'g'),
+(101, 15, 30, 'g'),
+(101, 23, 20, 'g'),
+(101, 9, 20, 'g'),
+(102, 9, 20, 'g'),
+(102, 7, 20, 'g'),
+(102, 11, 5, 'g'),
+(103, 9, 20, 'g'),
+(103, 18, 30, 'g'),
+(103, 28, 10, 'g'),
+(103, 12, 5, 'g'),
+(103, 31, 5, 'g'),
+(104, 9, 20, 'g'),
+(104, 14, 30, 'g'),
+(104, 25, 5, 'g'),
+(104, 23, 20, 'g'),
+(105, 9, 20, 'g'),
+(105, 7, 20, 'g'),
+(105, 11, 5, 'g'),
+(106, 1, 10, 'g'),
+(106, 26, 30, 'g'),
+(106, 11, 8, 'g'),
+(106, 20, 40, 'g'),
+(107, 20, 10, 'g'),
+(107, 26, 30, 'g'),
+(107, 11, 4, 'g'),
+(109, 24, 5, 'g'),
+(110, 9, 40, 'g'),
+(111, 21, 100, 'g'),
+(111, 20, 40, 'g'),
+(111, 2, 5, 'g'),
+(111, 1, 10, 'g'),
+(112, 9, 20, 'g'),
+(112, 6, 5, 'g'),
+(113, 20, 20, 'g'),
+(113, 22, 20, 'g'),
+(114, 27, 30, 'g'),
+(115, 21, 100, 'g'),
+(115, 20, 40, 'g'),
+(115, 1, 10, 'g'),
+(116, 9, 20, 'g'),
+(116, 5, 200, 'g'),
+(117, 9, 10, 'g'),
+(118, 9, 10, 'g'),
+(119, 9, 10, 'g'),
+(120, 9, 10, 'g'),
+(122, 9, 10, 'g'),
+(122, 7, 20, 'g'),
+(123, 9, 10, 'g'),
+(124, 9, 10, 'g'),
+(125, 9, 10, 'g'),
+(126, 9, 60, 'g'),
+(127, 21, 90, 'g'),
+(127, 20, 50, 'g'),
+(127, 10, 10, 'g'),
+(127, 29, 30, 'g'),
+(127, 1, 10, 'g'),
+(128, 20, 50, 'g'),
+(128, 21, 90, 'g'),
+(128, 2, 5, 'g'),
+(128, 10, 10, 'g'),
+(128, 29, 30, 'g'),
+(128, 1, 10, 'g'),
+(129, 20, 50, 'g'),
+(129, 21, 90, 'g'),
+(129, 10, 10, 'g'),
+(129, 29, 30, 'g'),
+(129, 1, 10, 'g'),
+(130, 20, 50, 'g'),
+(130, 21, 90, 'g'),
+(130, 10, 10, 'g'),
+(130, 29, 30, 'g'),
+(130, 1, 10, 'g'),
+(131, 20, 50, 'g'),
+(131, 21, 50, 'g'),
+(131, 19, 106, 'g'),
+(131, 16, 30, 'g'),
+(132, 19, 106, 'g'),
+(132, 20, 50, 'g'),
+(132, 21, 50, 'g'),
+(132, 17, 30, 'g'),
+(133, 20, 50, 'g'),
+(133, 21, 90, 'g'),
+(133, 10, 10, 'g'),
+(133, 29, 30, 'g'),
+(133, 1, 10, 'g'),
+(134, 19, 106, 'g'),
+(134, 20, 50, 'g'),
+(134, 21, 50, 'g'),
+(135, 19, 106, 'g'),
+(135, 20, 50, 'g'),
+(135, 21, 50, 'g'),
+(135, 15, 30, 'g'),
+(135, 17, 30, 'g');
 
 -- --------------------------------------------------------
 
@@ -54,14 +159,14 @@ CREATE TABLE `ingredient_defaut` (
   `id_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL COMMENT 'Gốc tên',
   `id_import_quantity` int(255) DEFAULT NULL COMMENT 'Gốc số lượng nhập',
   `id_unit` enum('g','ml') DEFAULT NULL COMMENT 'Gốc đơn vị',
-  `id_ import_price` int(255) DEFAULT NULL COMMENT 'Gốc giá nhập'
+  `id_import_price` int(255) DEFAULT NULL COMMENT 'Gốc giá nhập'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `ingredient_defaut`
 --
 
-INSERT INTO `ingredient_defaut` (`id_id`, `id_name`, `id_import_quantity`, `id_unit`, `id_ import_price`) VALUES
+INSERT INTO `ingredient_defaut` (`id_name`, `id_import_quantity`, `id_unit`, `id_import_price`) VALUES
 (1, 'Bột kem sữa', 450, 'g', 90000),
 (2, 'Bột matcha cozy', 200, 'g', 109000),
 (3, 'Cà phê hạt', 1000, 'g', 180000),
@@ -87,11 +192,12 @@ INSERT INTO `ingredient_defaut` (`id_id`, `id_name`, `id_import_quantity`, `id_u
 (23, 'Syrup monin dưa hấu', 700, 'ml', 215000),
 (24, 'Trà ahrmad bá tước', 3, 'g', 50000),
 (25, 'Trà đào cosy', 30, 'g', 26000),
-(26, 'Trân châu tđen', 2000, 'g', 85000),
+(26, 'Trân châu đen', 2000, 'g', 85000),
 (27, 'Trân châu trắng', 2000, 'g', 80000),
 (28, 'Vải lon', 825, 'g', 65000),
 (29, 'Whipping cream', 1000, 'g', 69500),
-(30, 'Bột cacao', 500, 'g', 65000);
+(30, 'Bột cacao', 500, 'g', 65000),
+(31, 'Trà OLong', 300, 'g', 1000);
 
 -- --------------------------------------------------------
 
@@ -109,46 +215,47 @@ CREATE TABLE `product` (
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`p_id`, `p_name`, `p_price`) VALUES
-(1, 'Cafe đen', 30000),
-(2, 'Café sữa', 30000),
-(3, 'Coffe latte', 30000),
-(4, 'Coffe americano', 30000),
-(5, 'White coffee', 30000),
-(6, 'Coffee capuchino', 30000),
-(7, 'Trà dưa lưới hoàng kim', 30000),
-(8, 'Trà đào', 30000),
-(9, 'Trà vải', 30000),
-(10, 'Trà cherry oolong', 30000),
-(11, 'Trà đào cam sả', 30000),
-(12, 'Hồng trà sữa', 30000),
-(13, 'Trà sữa gạo Hàn Quốc', 30000),
-(14, 'Trà bá tước', 30000),
-(15, 'Trà tắc xí muội', 30000),
-(16, 'Trà xanh latte', 30000),
-(17, 'Trà lipton chanh mật ong', 30000),
-(18, 'Chocolate coconut', 30000),
-(19, 'Sữa chua hoa anh đào', 30000),
-(20, 'Choco milk', 30000),
-(21, 'Cam ép', 30000),
-(22, 'Soda trà xanh', 30000),
-(23, 'Soda chanh dây', 30000),
-(24, 'Soda bạc bà', 30000),
-(25, 'Soda số đỏ', 30000),
-(26, 'Soda đào hoa', 30000),
-(27, 'Soda Vận hên', 30000),
-(28, 'Soda mặn mà', 30000),
-(29, 'Soda phiêu bồng', 30000),
-(30, 'Lime juice', 30000),
-(31, 'Choco smoothie', 30000),
-(32, 'Greentea smoothie', 30000),
-(33, 'Capu smoothie', 30000),
-(34, 'Mocha smoothie', 30000),
-(35, 'Blueberry  yogurt smoothie', 30000),
-(36, 'Mango  yogurt smoothie', 30000),
-(37, 'Coffe đá xay caramel', 30000),
-(90, 'Nước ép táo', 123456),
-(91, 'trà lài', 123);
+INSERT INTO `product` (`p_name`, `p_price`) VALUES
+('Coffee đen', 30000),
+('Coffee Sữa', 30000),
+('Coffee Latte', 30000),
+('Coffe Americano', 30000),
+('White Coffee', 30000),
+('Coffee Capuchino', 30000),
+('Trà Dưa Lưới Hoàng Kim', 40000),
+('Trà đào', 30000),
+('Trà Vải ', 30000),
+('Trà Cherry Oolong', 40000),
+('Trà đào Cam Sả', 30000),
+('Hồng Trà Sữa', 40000),
+('Trà Sữa Gạo Hàn Quốc', 40000),
+('Trà Sữa Gạo Hàn Quốc', 40000),
+('Trà Bá Tước', 30000),
+('Trà Tắc Xí Muội', 30000),
+('Trà Xanh Latte', 40000),
+('Trà Lipton Chanh Mật Ong', 30000),
+('Chocolate Coconut', 35000),
+('Sữa Chua Hoa Anh đào', 40000),
+('Choco Milk', 40000),
+('Cam ép', 40000),
+('Soda Trà Xanh', 40000),
+('Soda Chanh Dây', 40000),
+('Soda Bạc Bà', 40000),
+('Soda Số đỏ', 40000),
+('Soda đào Hoa', 40000),
+('Soda Vận Hên', 40000),
+('Soda Mặn Mà', 40000),
+('Soda Phiêu Bồng', 40000),
+('Lime Juice', 45000),
+('Choco Smoothie', 45000),
+('Greentea Smoothie', 45000),
+('Capu Smoothie', 45000),
+('Mocha Smoothie', 45000),
+('Blueberry  Yogurt Smoothie', 45000),
+('Mango  Yogurt Smoothie', 45000),
+('Coffe đá Xay Caramel', 45000),
+('Yogurt Natural', 30000),
+('Golden Yogurt ', 40000);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -182,19 +289,19 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `ingredient`
 --
 ALTER TABLE `ingredient`
-  MODIFY `i_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `i_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT cho bảng `ingredient_defaut`
 --
 ALTER TABLE `ingredient_defaut`
-  MODIFY `id_id` int(100) NOT NULL AUTO_INCREMENT COMMENT 'Gốc Id', AUTO_INCREMENT=31;
+  MODIFY `id_id` int(100) NOT NULL AUTO_INCREMENT COMMENT 'Gốc Id', AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `p_id` int(100) NOT NULL AUTO_INCREMENT COMMENT 'id sản phẩm', AUTO_INCREMENT=92;
+  MODIFY `p_id` int(100) NOT NULL AUTO_INCREMENT COMMENT 'id sản phẩm', AUTO_INCREMENT=136;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
