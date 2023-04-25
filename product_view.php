@@ -6,7 +6,7 @@
     include("head.php");
     include("conn_db.php");
     ?>
-    <title>Welcome to Moon Coffee</title>
+    <title>View Product</title>
 </head>
 
 <body>

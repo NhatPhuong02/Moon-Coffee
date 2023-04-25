@@ -6,7 +6,7 @@
     include("head.php");
     include("conn_db.php");
     ?>
-    <title>Welcome to Moon Coffee</title>
+    <title>Moon COffee's Ingredient</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Ingredient</li>
-                <li class="ms-auto"> <a href="ingredient_add.php?p_value=1" class="btn btn-success">Add Ingredient</a></li>
+                <li class="ms-auto"> <a href="ingredient_add.php" class="btn btn-success">Add Ingredient</a></li>
             </ol>
         </nav>
         <div class="fs-1 text-center fw-bold"><span>Bảng Nguyên Liệu</span></div>
@@ -57,9 +57,9 @@
                             <?php echo round($row["id_import_price"] / $row["id_import_quantity"] , 3);?>
                         </td>
                         <td>
-                            <a href="product_edit.php?p_id=<?php echo $row["id_id"] ?>"
+                            <a href="ingredient_edit.php?id_id=<?php echo $row["id_id"] ?>"
                                 class="btn btn-sm btn-success">Edit</a>
-                            <a href="product_delete.php?p_id=<?php echo $row["id_id"] ?>"
+                            <a href="ingredient_delete.php?id_id=<?php echo $row["id_id"] ?>"
                                 class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
                     </tr>

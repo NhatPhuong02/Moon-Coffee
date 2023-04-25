@@ -10,7 +10,7 @@
         header("location: product.php");
     }
     ?>
-    <title>Welcome to Moon Coffee</title>
+    <title>Edit Product</title>
 </head>
 
 <body>
