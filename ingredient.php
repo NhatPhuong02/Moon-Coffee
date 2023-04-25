@@ -6,7 +6,7 @@
     include("head.php");
     include("conn_db.php");
     ?>
-    <title>Moon COffee's Ingredient</title>
+    <title>Moon Coffee's Ingredient</title>
 </head>
 
 <body>

@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <?php
     $cost = 0;
     include("header.php");
