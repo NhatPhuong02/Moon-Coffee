@@ -31,7 +31,7 @@
                     <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
                     <button type="reset" class="btn btn-danger"
                         onclick="javascript: window.location='product.php'">Clear</button>
-                    <a href="product_add.php" class="btn btn-primary">Add Product</a>
+                    <a href="product_add.php?p_value=1" class="btn btn-primary">Add Product</a>
                 </div>
             </div>
         </form>
