@@ -89,15 +89,15 @@
 
                 switch ($number) {
                     case 9:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}'),('{$row["p_id"]}', '{$i_name_7}', '{$i_quantity_7}', '{$i_unit_7}'),('{$row["p_id"]}', '{$i_name_8}', '{$i_quantity_8}', '{$i_unit_8}'),('{$row["p_id"]}', '{$i_name_9}', '{$i_quantity_9}', '{$i_unit_9}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}'),('{$row["p_id"]}', '{$i_name_7}', '{$i_quantity_7}', '{$i_unit_7}'),('{$row["p_id"]}', '{$i_name_8}', '{$i_quantity_8}', '{$i_unit_8}'),('{$row["p_id"]}', '{$i_name_9}', '{$i_quantity_9}', '{$i_unit_9}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 8:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}'),('{$row["p_id"]}', '{$i_name_7}', '{$i_quantity_7}', '{$i_unit_7}'),('{$row["p_id"]}', '{$i_name_8}', '{$i_quantity_8}', '{$i_unit_8}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}'),('{$row["p_id"]}', '{$i_name_7}', '{$i_quantity_7}', '{$i_unit_7}'),('{$row["p_id"]}', '{$i_name_8}', '{$i_quantity_8}', '{$i_unit_8}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 7:
-                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, i_name, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}'),('{$row["p_id"]}', '{$i_name_7}', '{$i_quantity_7}', '{$i_unit_7}')";
+                        $query_ingredient = "INSERT INTO ingredient (Product_p_id, Ingredient_defaut_id_id, i_quantity, i_unit) VALUES ('{$row["p_id"]}', '{$i_name_1}', '{$i_quantity_1}', '{$i_unit_1}'),('{$row["p_id"]}', '{$i_name_2}', '{$i_quantity_2}', '{$i_unit_2}'),('{$row["p_id"]}', '{$i_name_3}', '{$i_quantity_3}', '{$i_unit_3}'),('{$row["p_id"]}', '{$i_name_4}', '{$i_quantity_4}', '{$i_unit_4}'),('{$row["p_id"]}', '{$i_name_5}', '{$i_quantity_5}', '{$i_unit_5}'),('{$row["p_id"]}', '{$i_name_6}', '{$i_quantity_6}', '{$i_unit_6}'),('{$row["p_id"]}', '{$i_name_7}', '{$i_quantity_7}', '{$i_unit_7}')";
                         $result_ingredient = $mysqli->query($query_ingredient);
                         break;
                     case 6:
@@ -134,7 +134,7 @@
                 header("location: errol.php?errol=2");
             }
         } else {
-            header("location: errol.php?errol=2");
+            header("location: errol.php?errol=3");
         }
     }
     ?>
