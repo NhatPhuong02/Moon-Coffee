@@ -5,17 +5,18 @@
     <?php
     include("head.php");
     include("conn_db.php");
+
     if (isset($_POST["edit_ingredient_cfm"])) {
-        $id_id = $_pOST["id_id"];
+        $id_id = $_POST["id_id"];
         $id_name = ucwords($_POST["id_name"]);
         $id_unit = $_POST["id_unit"];
         $id_import_quantity = $_POST["id_quantity"];
         $id_import_price = $_POST["id_price"];
 
-        $query_update = "UPDATE ingredient_defaut SET id_name = '{$id_name}', id_import_quantity= '{$id_import_quantity}', id_unit= '{$id_unit}', id_import_price= '{$id_import_quantity}' WHERE id_id = '{$id_id}'";
-        $result_update = $mysqli->query($query_update);
+        $query_update = "UPDATE ingredient_defaut SET id_name = '{$id_name}', id_import_quantity= '{$id_import_quantity}', id_unit= '{$id_unit}', id_import_price= '{$id_import_price}' WHERE id_id = '{$id_id}'";
+        $result = $mysqli->query($query_update);
 
-        if ($result_update) {
+        if ($result) {
             header("location: ingredient.php");
         } else {
             header("location: test.php");
