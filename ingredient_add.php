@@ -3,9 +3,10 @@
 
 <head>
     <?php
+    session_start();
     include("head.php");
     include("conn_db.php");
-    if(isset($_POST["add_ingredient_cfm"]))
+    if (isset($_POST["add_ingredient_cfm"]))
     {
         $id_name = $_POST["id_name"];
         $id_unit = $_POST["id_unit"];

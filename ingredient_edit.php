@@ -3,6 +3,7 @@
 
 <head>
     <?php
+    session_start();
     include("head.php");
     include("conn_db.php");
 
@@ -35,13 +36,12 @@
     $result_ingredient = $mysqli->query($query_ingredient);
     $ingredient_row = $result_ingredient->fetch_array();
     ?>
-    <div class="container px-5 py-4" id="shop-body">
+    
+    <div class="container pt-5" id="shop-body">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="ingredient.php">Ingredient</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Ingredient</li>
-            </ol>
+            <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
+                <i class="bi bi-arrow-left-square me-2"></i>Go back
+            </a>
         </nav>
         <div class="row row-cols-1 row-cols-md-2 mb-5 mt-5">
             <div class="col mb-3 mb-md-0 logo">
@@ -101,7 +101,8 @@
                             </div>
                             <div class="form-amount text-end">
                                 <input type="hidden" name="id_id" value="<?php echo $id_id; ?>">
-                                <button  class="btn btn-success w-100" type="submit" name="edit_ingredient_cfm">Accept</button>
+                                <button class="btn btn-success w-100" type="submit"
+                                    name="edit_ingredient_cfm">Accept</button>
                             </div>
                         </div>
                     </form>

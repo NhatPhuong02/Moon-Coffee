@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <?php
+    <?php    
+    session_start();
     include("head.php");
     include("conn_db.php");
     ?>
@@ -18,13 +19,11 @@
     $result_product = $mysqli->query($query_product);
     $product_row = $result_product->fetch_array();
     ?>
-    <div class="container px-5 py-4" id="shop-body">
+    <div class="container pt-5" id="shop-body">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="product.php">Product</a></li>
-                <li class="breadcrumb-item active" aria-current="page">View Product</li>
-            </ol>
+            <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
+                <i class="bi bi-arrow-left-square me-2"></i>Go back
+            </a>
         </nav>
         <div class="row row-cols-1 row-cols-md-2 mb-5 mt-5">
             <div class="col mb-3 mb-md-0 logo">

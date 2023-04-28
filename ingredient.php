@@ -3,6 +3,7 @@
 
 <head>
     <?php
+    session_start();
     include("head.php");
     include("conn_db.php");
     ?>
@@ -15,10 +16,9 @@
     ?>
     <div class="container pt-5">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Ingredient</li>
-            </ol>
+            <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
+                <i class="bi bi-arrow-left-square me-2"></i>Go back
+            </a>
         </nav>
         <div class="fs-1 text-start fw-bold my-2"><span>Bảng Nguyên Liệu</span></div>
         <form class="form-floating mb-3" method="GET" action="ingredient.php">
@@ -59,7 +59,8 @@
                 </div>
             </div>
         <?php } else { ?>
-            <table class="mt-2 table table-hover rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
+            <table
+                class="mt-2 table table-hover rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
                 <caption>
                     <?php echo $row_num; ?> Ingredient(s)
                     <?php if (isset($_GET["search"])) { ?><br /><a href="ingredient.php"
@@ -102,7 +103,8 @@
                                     class="btn btn-sm btn-outline-danger">Delete</a>
                             </td>
                         </tr>
-                    <?php } } ?>
+                    <?php }
+        } ?>
             </tbody>
         </table>
     </div>

@@ -3,6 +3,7 @@
 
 <head>
     <?php
+    session_start();
     include("head.php");
     include("conn_db.php");
 
@@ -17,24 +18,21 @@
     <?php
     include("header.php");
     $p_id;
-    if(isset($_GET["p_id"])){
+    if (isset($_GET["p_id"])) {
         $p_id = $_GET["p_id"];
     }
-    if(isset($_POST["p_id"])){
+    if (isset($_POST["p_id"])) {
         $p_id = $_POST["p_id"];
     }
     $query_product = "SELECT p.* FROM product p  WHERE p.p_id = {$p_id}  LIMIT 0,1";
     $result_product = $mysqli->query($query_product);
     $product_row = $result_product->fetch_array();
     ?>
-    <div class="container px-5 py-4">
+    <div class="container pt-5">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="product.php">Product</a></li>
-                <li class="breadcrumb-item"><a href="product_view.php?p_id=<?=$p_id?>">View Product</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
-            </ol>
+            <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
+                <i class="bi bi-arrow-left-square me-2"></i>Go back
+            </a>
         </nav>
         <form action="product_edit.php" class="mt-5" method="POST" id="shop-body">
             <div class="row row-cols-1 row-cols-md-2 mb-5">
