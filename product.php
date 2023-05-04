@@ -93,7 +93,7 @@
                                 class="btn btn-sm btn-primary">View</a>
                             <a href="product_edit.php?p_id=<?php echo $row["p_id"] ?>"
                                 class="btn btn-sm btn-outline-success">Edit</a>
-                            <a href="product_delete.php?p_id=<?php echo $row["p_id"] ?>"
+                            <a href="product_delete.php?p_id=<?php echo $row["p_id"] ?>&value=1"
                                 class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
                     </tr>

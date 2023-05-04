@@ -31,7 +31,7 @@
     <div class="container pt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                 <li class="breadcrumb-item"><a href="index.php">Ingredient</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Add Ingredient</li>
                 </li>
