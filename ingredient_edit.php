@@ -38,7 +38,7 @@
     ?>
     
     <div class="container pt-5" id="shop-body">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class ="d-flex">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
             </a>
@@ -107,10 +107,12 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
 </html>

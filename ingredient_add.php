@@ -29,7 +29,7 @@
     include("header.php");
     ?>
     <div class="container pt-5">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class ="d-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                 <li class="breadcrumb-item"><a href="index.php">Ingredient</a></li>
@@ -77,6 +77,9 @@
             </div>
         </form>
     </div>
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
 </html>

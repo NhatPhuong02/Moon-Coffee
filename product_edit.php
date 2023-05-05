@@ -7,11 +7,7 @@
     include("head.php");
     include("conn_db.php");
 
-    if (isset($_POST["edit_product_cfm"])) {
-        header("location: product.php");
-    }
-
-    if (isset($_POST["add_cfm"])) {
+    if (isset($_POST["add_cfm"])) {      
         $name = $_POST["new_name"];
         $quantity = $_POST["new_quantity"];
         $p_id = $_POST["p_id"];
@@ -219,6 +215,9 @@
             });
         });
     </script> -->
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
 </html>
