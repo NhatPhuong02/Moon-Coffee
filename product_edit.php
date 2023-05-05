@@ -73,7 +73,7 @@
                 <div class="col-5 mb-3 mb-md-0 logo">
                     <img src='img/logo.png' class="img-fluid rounded-25 float-start">
                 </div>
-                <div class="col-7 text-wrap rounded-3" style="background-color: rgba(84, 45, 33,0.7);">
+                <div class="col-7 text-wrap rounded-3 mb-5" style="background-color: rgba(84, 45, 33,0.7);">
                     <div class="fs-3 mb-2 fw-bold col-6"> Thông tin thành phần</div>
 
                     <div class="row input-group m-0">
@@ -205,8 +205,8 @@
                             </p>
                         </div>
                     </div>
-                    <button class="btn btn-success mt-1 w-100 mb-3" name="edit_product_cfm"
-                        type="submit">Accept</button>
+                    <a href="product.php" class="btn btn-success mt-1 w-100 mb-3" name="edit_product_cfm"
+                        type="submit">Accept</a>
                 </div>
             </div>
         </form>
