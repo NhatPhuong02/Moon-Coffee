@@ -11,6 +11,4 @@ if ($result_update) {
 }
 ?>
 <button id="go-forward">Go Forward!</button>
-<script>document.getElementById("go-forward").addEventListener("click", (e) => {
-        history.forward();
-    });</script>
+

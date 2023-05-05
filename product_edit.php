@@ -7,7 +7,14 @@
     include("head.php");
     include("conn_db.php");
 
-    if (isset($_POST["add_cfm"])) {      
+    if (isset($_POST["edit_cfm"])) {
+        $p_name = $_POST["p_name"];
+        $p_price = $_POST["p_price"];
+        $query_p = "UPDATE product SET p_name = '{$p_name}', p_price = '{$p_price}' WHERE p_id = '{$_POST["p_id"]}'";
+        $resulr_p = $mysqli->query($query_p);
+    }
+
+    if (isset($_POST["add_cfm"])) {
         $name = $_POST["new_name"];
         $quantity = $_POST["new_quantity"];
         $p_id = $_POST["p_id"];
@@ -59,12 +66,12 @@
     $product_row = $result_product->fetch_array();
     ?>
     <div class="container pt-5">
-        <nav aria-label="breadcrumb" class ="d-flex">
+        <nav aria-label="breadcrumb" class="d-flex">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="product.php" onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
             </a>
         </nav>
-        <form action="product_edit.php" class="mt-5" method="POST" id="shop-body">
+        <div class="mt-5" id="shop-body">
             <div class="row">
                 <div class="col-5 mb-3 mb-md-0 logo">
                     <img src='img/logo.png' class="img-fluid rounded-25 float-start">
@@ -73,24 +80,31 @@
                     <div class="fs-3 mb-2 fw-bold col-6"> Thông tin thành phần</div>
 
                     <div class="row input-group m-0">
-                        <div class="col-7">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-                                <input name="p_name" type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default"
-                                    value="<?php echo $product_row["p_name"] ?>" required>
+                        <form class="row" action="product_edit.php" method="POST">
+                            <div class="col-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                                    <input name="p_name" type="text" class="form-control"
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                        value="<?php echo $product_row["p_name"] ?>" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Price</span>
-                                <input name="p_price" type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default"
-                                    value="<?php echo $product_row["p_price"] ?>" required>
+                            <div class="col-4">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Price</span>
+                                    <input name="p_price" type="text" class="form-control"
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                        value="<?php echo $product_row["p_price"] ?>" required>
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-2">
+                                <input type="hidden" class="form-control" id="p_id" name="p_id"
+                                    value="<?php echo $p_id ?>">
+                                <button type="submit" name="edit_cfm" class="btn btn-success w-100" si>Add</button>
+                            </div>
+                        </form>
                         <br>
-                        <div class="mt-0 p-0">
+                        <form action="product_edit.php" method="POST" class="mt-0 p-0">
                             <div class="row">
                                 <div class="fs-3 mb-2 fw-bold col-6"> Danh sách thành phần</div>
                                 <div class="form-amount text-end col-6">
@@ -100,7 +114,8 @@
                             </div>
                             <div>
                                 <table
-                                    class="table table-rounded-2 table-fixed table-light table-striped table-hover align-middle caption-top mb-2"  style=" display: inline-block;  height: 233px;  overflow-y: scroll;">
+                                    class="table table-rounded-2 table-fixed table-light table-striped table-hover align-middle caption-top mb-2"
+                                    style=" display: inline-block;  height: 233px;  overflow-y: scroll;">
                                     <thead class="bg-light sticky-top">
                                         <tr>
                                             <th scope="col-1">#</th>
@@ -110,7 +125,7 @@
                                             <th class="col-1 text-center">Action</th>
                                         </tr>
                                     </thead>
-                                
+
                                     <tbody>
                                         <?php
                                         $query_ingredient = "SELECT i.*, id.* FROM ingredient i, ingredient_defaut id  WHERE Product_p_id = {$p_id} AND id.id_id = Ingredient_defaut_id_id";
@@ -186,8 +201,8 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <button type="submit" name="add_cfm" class="btn btn-sm btn-success w-100"
-                                                required>Add</button>
+                                            <button type="submit" name="add_cfm"
+                                                class="btn btn-sm btn-success w-100">Add</button>
                                         </td>
                                     </tbody>
                                 </table>
@@ -199,13 +214,13 @@
                                     Add Ingredient
                                 </button>
                             </p>
-                        </div>
+                        </form>
                     </div>
                     <a href="product.php" class="btn btn-success mt-1 w-100 mb-3" name="edit_product_cfm"
                         type="submit">Accept</a>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
     <!-- <Script>window.history.forward()</Script>   -->
     <!-- <script>
