@@ -19,7 +19,7 @@
                     <a class="nav-link" style="color: #dac991" href="ingredient.php">Ingredient</a>
                 </li>
                 <li class="nav-item fw-bold fs-4 mx-3">
-                    <a class="nav-link" style="color: #dac991" href="#">Login</a>
+                    <a class="nav-link" style="color: #dac991" href="sign.html">Login</a>
                 </li>
             </ul>
         </div>

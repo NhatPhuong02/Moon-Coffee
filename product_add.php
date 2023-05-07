@@ -11,7 +11,12 @@
         $p_price = (int) $_POST["p_price"];
         $num = $_POST["p_num"];
         $value = 0;
-
+        $query_check = "SELECT * FROM product WHERE p_name = N'{$p_name}'";
+        $result_check = $mysqli->query($query_check);
+        $row_check = $result_check->num_rows;
+        if ($row_check != 0) {
+            header("location: product.php?add_rs=2");
+        }
     }
     if (isset($_GET["p_value"])) {
         $value = $_GET["p_value"];
@@ -22,6 +27,8 @@
         $p_name2 = $_POST["p_name2"];
         $p_price2 = (int) $_POST["p_price2"];
 
+        //check trùng 
+    
         $query_product = "INSERT INTO product (p_name, p_price) VALUES ('{$p_name2}', '{$p_price2}')";
         $result_product = $mysqli->query($query_product);
 
@@ -126,15 +133,15 @@
                         break;
                 }
                 if ($result_ingredient) {
-                    header("location: product.php");
+                    header("location: product.php?add_rs=1");
                 } else {
-                    header("location: errol.php?errol=1");
+                    header("location: product.php?add_rs=0");
                 }
             } else {
-                header("location: errol.php?errol=2");
+                header("location: errol.php?errol=1");
             }
         } else {
-            header("location: errol.php?errol=3");
+            header("location: errol.php?errol=2");
         }
     }
     ?>
