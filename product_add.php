@@ -200,8 +200,8 @@
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Ingredients</span>
-                                    <select class="form-select" id="ingredients" name="i_name_<?= $x ?>">
-                                        <option selected>Choose...</option>
+                                    <select class="form-select" id="ingredients" name="i_name_<?= $x ?>" required>
+                                        <option value="" selected>Choose...</option>
                                         <?php
                                         $query_id = "SELECT * FROM ingredient_defaut GROUP BY id_name ASC";
                                         $result_id = $mysqli->query($query_id);
@@ -217,15 +217,16 @@
                             <div class="col-3">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Quantity</span>
-                                    <input name="i_quantity_<?= $x ?>" type="text" class="form-control"
-                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <input name="i_quantity_<?= $x ?>" type="number" class="form-control"
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Units</label>
                                     <select class="form-select" id="inputGroupSelect01" name="i_unit_<?= $x ?>">
-                                        <option value="g" selected>G</option>
+                                        <option value="" selected>Choose...</option>
+                                        <option value="g">G</option>
                                         <option value="ml">ML</option>
                                     </select>
                                 </div>
