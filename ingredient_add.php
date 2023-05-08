@@ -60,14 +60,14 @@
                 <div class="col-6">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">3: Import Quantity</span>
-                        <input name="id_quantity" type="text" class="form-control" aria-label="Sizing example input"
+                        <input name="id_quantity" type="number" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">4: Import Price</span>
-                        <input name="id_price" type="text" class="form-control" aria-label="Sizing example input"
+                        <input name="id_price" type="number" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default" required>
                     </div>
                 </div>
