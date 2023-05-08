@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <?php
+        include("head.php");
+    ?>
 
     <!-- link css -->
     <link rel="stylesheet" href="css/sign.css">
@@ -14,7 +15,7 @@
         integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Log In Page</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
@@ -43,6 +44,7 @@
         border-radius: 10px;
         overflow: hidden;
         background-color: #fff;
+        padding: 0;
     }
 
     @keyframes Show {
