@@ -4,15 +4,15 @@
 <head>
     <?php
     session_start();
-    include("conn_db.php");
-    include("head.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
     ?>
     <title>Moon Coffee's Product</title>
 </head>
 
 <body>
     <?php
-    include("header.php");
+    include("../system/header.php");
     ?>
     <div class="container pt-5">
         <nav aria-label="breadcrumb" class="d-flex">
@@ -176,7 +176,7 @@
                                 <td>
                                     <?php echo $i++; ?>
                                 </td>
-                                <td class="w-25"><img src="img/logo.png" class="img-thumbnail rounded-circle w-25"></td>
+                                <td class="w-25"><img src="../img/logo.png" class="img-thumbnail rounded-circle w-25"></td>
                                 <td>
                                     <?php echo $row["p_name"]; ?>
                                 </td>
@@ -199,7 +199,7 @@
         </div>
     </div>
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

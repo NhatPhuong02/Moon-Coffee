@@ -4,8 +4,8 @@
 <head>
     <?php
     session_start();
-    include("head.php");
-    include("conn_db.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
 
     if (isset($_POST["edit_ingredient_cfm"])) {
         $id_id = $_POST["id_id"];
@@ -30,7 +30,7 @@
 <body>
     <?php
     $cost = 0;
-    include("header.php");
+    include("../system/header.php");
     $id_id = $_GET["id_id"];
     $query_ingredient = "SELECT id.* FROM ingredient_defaut id  WHERE id.id_id = {$id_id}  LIMIT 0,1";
     $result_ingredient = $mysqli->query($query_ingredient);
@@ -45,7 +45,7 @@
         </nav>
         <div class="row row-cols-1 row-cols-md-2 mb-5 mt-5">
             <div class="col mb-3 mb-md-0 logo">
-                <img src='img/logo.png' class="img-fluid rounded-25 float-start">
+                <img src='../img/logo.png' class="img-fluid rounded-25 float-start">
             </div>
             <div class="col text-wrap">
                 <h1 class="">
@@ -111,7 +111,7 @@
         </div>
     </div>
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

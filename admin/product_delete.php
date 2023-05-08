@@ -1,5 +1,5 @@
 <?php
-include("conn_db.php");
+include("../system/conn_db.php");
 $value = $_GET["value"];
 if ($value == 1) {
     $p_id = $_GET["p_id"];

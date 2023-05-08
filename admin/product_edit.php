@@ -4,8 +4,8 @@
 <head>
     <?php
     session_start();
-    include("head.php");
-    include("conn_db.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
 
     if (isset($_POST["edit_cfm"])) {
         $p_name = $_POST["p_name"];
@@ -53,7 +53,7 @@
 
 <body>
     <?php
-    include("header.php");
+    include("../system/header.php");
     $p_id;
     if (isset($_GET["p_id"])) {
         $p_id = $_GET["p_id"];
@@ -74,7 +74,7 @@
         <div class="mt-5" id="shop-body">
             <div class="row">
                 <div class="col-5 mb-3 mb-md-0 logo">
-                    <img src='img/logo.png' class="img-fluid rounded-25 float-start">
+                    <img src='../img/logo.png' class="img-fluid rounded-25 float-start">
                 </div>
                 <div class="col-7 text-wrap rounded-3 mb-5" style="background-color: rgba(84, 45, 33,0.7);">
                     <div class="fs-3 mb-2 fw-bold col-6"> Thông tin thành phần</div>
@@ -231,7 +231,7 @@
         });
     </script> -->
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

@@ -4,8 +4,8 @@
 <head>
     <?php
     session_start();
-    include("head.php");
-    include("conn_db.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
     if (isset($_POST["add_ingredient_cfm"]))
     {
         $id_name = $_POST["id_name"];
@@ -26,7 +26,7 @@
 
 <body>
     <?php
-    include("header.php");
+    include("../system/header.php");
     ?>
     <div class="container pt-5">
         <nav aria-label="breadcrumb" class ="d-flex">
@@ -78,7 +78,7 @@
         </form>
     </div>
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

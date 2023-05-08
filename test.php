@@ -1,14 +1,29 @@
+
 <?php
-include("conn_db.php");
+    function sanitize_my_email($field) {
 
-$query_update = "UPDATE ingredient_defaut SET id_name = 'gà', id_import_quantity= '123', id_unit= 'g', id_import_price= '123' WHERE id_id = '30'";
-$result_update = $mysqli->query($query_update);
+        // Loại bỏ ký tự không hợp lệ
+        $field = filter_var($field, FILTER_SANITIZE_EMAIL);
 
-if ($result_update) {
-    echo "ok";
-} else {
-    echo "deo";
-}
+        // Xác thực Email
+        if (filter_var($field, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    $to_email = 'name@company.com';
+    $subject = 'Testing PHP Mail';
+    $message = 'This mail is sent using the PHP mail ';
+    $headers = 'From: noreply@company.com';
+
+    // Kiểm tra xem địa chỉ nhận có hợp lệ không
+    $secure_check = sanitize_my_email($to_email);
+    if ($secure_check == false) {
+        echo "Invalid input";
+    } else { //send email 
+        mail($to_email, $subject, $message, $headers);
+        echo "This email is sent using PHP Mail";
+    }
 ?>
-<button id="go-forward">Go Forward!</button>
-

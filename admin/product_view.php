@@ -4,8 +4,8 @@
 <head>
     <?php    
     session_start();
-    include("head.php");
-    include("conn_db.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
     ?>
     <title>View Product</title>
 </head>
@@ -13,7 +13,7 @@
 <body>
     <?php
     $cost = 0;
-    include("header.php");
+    include("../system/header.php");
     $p_id = $_GET["p_id"];
     $query_product = "SELECT p.* FROM product p  WHERE p.p_id = {$p_id}  LIMIT 0,1";
     $result_product = $mysqli->query($query_product);
@@ -95,7 +95,7 @@
         </div>
     </div>
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

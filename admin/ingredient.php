@@ -4,15 +4,15 @@
 <head>
     <?php
     session_start();
-    include("head.php");
-    include("conn_db.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
     ?>
     <title>Moon Coffee's Ingredient</title>
 </head>
 
 <body>
     <?php
-    include("header.php");
+    include("../system/header.php");
     ?>
     <div class="container pt-5">
         <nav aria-label="breadcrumb" class ="d-flex">
@@ -109,7 +109,7 @@
         </table>
     </div>
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

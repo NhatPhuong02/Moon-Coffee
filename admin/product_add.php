@@ -3,8 +3,8 @@
 
 <head>
     <?php
-    include("head.php");
-    include("conn_db.php");
+    include("../system/head.php");
+    include("../system/conn_db.php");
     $num;
     if (isset($_POST["add_confirm"])) {
         $p_name = ucwords($_POST["p_name"]);
@@ -150,7 +150,7 @@
 
 <body>
     <?php
-    include("header.php");
+    include("../system/header.php");
     ?>
     <div class="container pt-5">
         <nav aria-label="breadcrumb">
@@ -231,7 +231,7 @@
                             <div class="col-3">
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Units</label>
-                                    <select class="form-select" id="inputGroupSelect01" name="i_unit_<?= $x ?>">
+                                    <select class="form-select" id="inputGroupSelect01" name="i_unit_<?= $x ?> "required>
                                         <option value="" selected>Choose...</option>
                                         <option value="g">G</option>
                                         <option value="ml">ML</option>
@@ -250,7 +250,7 @@
         <?php } ?>
     </div>
     <?php
-    include("footer.php");
+    include("../system/footer.php");
     ?>
 </body>
 

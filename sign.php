@@ -3,12 +3,223 @@
 
 <head>
     <?php
-        include("head.php");
+    include("system/head.php");
     ?>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
 
-    <!-- link css -->
-    <link rel="stylesheet" href="css/sign.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Mulish', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #542D21;
+        }
+
+        .container {
+            width: 60%;
+            display: flex;
+            height: 650px;
+            box-shadow: rgba(0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0.22) 0px 10px 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 0;
+        }
+
+        @keyframes Show {
+
+            0%,
+            49.999% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        @keyframes Hidden {
+
+            0%,
+            49.999% {
+                opacity: 1;
+                z-index: 5;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+
+        .container .box {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 50%;
+            transition: all 0.8s;
+            transform: translateX(0);
+            background-color: #fff;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+
+        .container.active .box {
+            transform: translateX(100%);
+        }
+
+        .container .box .form {
+            position: absolute;
+            height: 100%;
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container .box .form.sign_up {
+            transition: all 1.15s;
+            z-index: 1;
+            opacity: 0;
+            background-color: #fff;
+        }
+
+        .container .box .form.sign_in {
+            opacity: 1;
+            transition: all 1.15s;
+            z-index: 5;
+            background-color: #fff;
+        }
+
+        .container.active .box .form.sign_in {
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .container.active .box .form.sign_up {
+            z-index: 5;
+            opacity: 1;
+        }
+
+        .container .overlay {
+            display: flex;
+            height: 100%;
+            width: 50%;
+            transition: all 0.8s;
+            transform: translateX(0);
+            background-color: #dac991;
+            z-index: 1;
+            overflow: hidden;
+            z-index: 5;
+            opacity: 1;
+        }
+
+        .container.active .overlay {
+            transform: translateX(-100%);
+        }
+
+        .container .overlay .page {
+            height: 100%;
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.5s;
+            opacity: 1;
+        }
+
+        .container.active .overlay .page.page_signIn {
+            opacity: 0;
+            margin-left: -100%;
+        }
+
+        .container.active .overlay .page.page_signUp {
+            margin-left: 0%;
+        }
+
+
+        .overlay .page h3 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .overlay .page p {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-block;
+            outline: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 550;
+            background-color: transparent;
+            padding: 12px 45px;
+            border-radius: 22px;
+            border: 1.5px solid #fff;
+            cursor: pointer;
+        }
+
+        .form h3 {
+            color: #222;
+            font-size: 40px;
+        }
+
+        .form span {
+            color: #3a3838;
+        }
+
+        #form_input .type {
+            width: 330px;
+            height: 48px;
+            background-color: #EEEDEF;
+            margin: 30px 0;
+        }
+
+        #form_input .type input {
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        #form_input .type input::placeholder {
+            color: #A9A8A9;
+        }
+
+        #form_input .forgot {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .bkg {
+            background-color: #dac991;
+        }
+    </style>
     <!-- link icon -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
@@ -17,221 +228,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In Page</title>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Mulish', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        min-height: 100vh;
-        background-color: #542D21;
-    }
-
-    .container {
-        width: 60%;
-        display: flex;
-        height: 650px;
-        box-shadow: rgba(0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0.22) 0px 10px 10px;
-        border-radius: 10px;
-        overflow: hidden;
-        background-color: #fff;
-        padding: 0;
-    }
-
-    @keyframes Show {
-
-        0%,
-        49.999% {
-            opacity: 0;
-            z-index: 1;
-        }
-
-        100% {
-            opacity: 1;
-            z-index: 5;
-        }
-    }
-
-    @keyframes Hidden {
-
-        0%,
-        49.999% {
-            opacity: 1;
-            z-index: 5;
-        }
-
-        100% {
-            opacity: 0;
-            z-index: 1;
-        }
-    }
-
-    .container .box {
-        position: relative;
-        display: flex;
-        height: 100%;
-        width: 50%;
-        transition: all 0.8s;
-        transform: translateX(0);
-        background-color: #fff;
-        z-index: 1;
-        overflow: hidden;
-    }
-
-
-    .container.active .box {
-        transform: translateX(100%);
-    }
-
-    .container .box .form {
-        position: absolute;
-        height: 100%;
-        min-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .container .box .form.sign_up {
-        transition: all 1.15s;
-        z-index: 1;
-        opacity: 0;
-        background-color: #fff;
-    }
-
-    .container .box .form.sign_in {
-        opacity: 1;
-        transition: all 1.15s;
-        z-index: 5;
-        background-color: #fff;
-    }
-
-    .container.active .box .form.sign_in {
-        z-index: 1;
-        opacity: 0;
-    }
-
-    .container.active .box .form.sign_up {
-        z-index: 5;
-        opacity: 1;
-    }
-
-    .container .overlay {
-        display: flex;
-        height: 100%;
-        width: 50%;
-        transition: all 0.8s;
-        transform: translateX(0);
-        background-color: #dac991;
-        z-index: 1;
-        overflow: hidden;
-        z-index: 5;
-        opacity: 1;
-    }
-
-    .container.active .overlay {
-        transform: translateX(-100%);
-    }
-
-    .container .overlay .page {
-        height: 100%;
-        min-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        transition: all 0.5s;
-        opacity: 1;
-    }
-
-    .container.active .overlay .page.page_signIn {
-        opacity: 0;
-        margin-left: -100%;
-    }
-
-    .container.active .overlay .page.page_signUp {
-        margin-left: 0%;
-    }
-
-
-    .overlay .page h3 {
-        color: #fff;
-        font-size: 40px;
-        margin-bottom: 15px;
-    }
-
-    .overlay .page p {
-        color: #fff;
-        font-weight: 600;
-        margin-bottom: 20px;
-        font-size: 17px;
-    }
-
-    .btn {
-        display: inline-block;
-        outline: none;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 15px;
-        font-weight: 550;
-        background-color: transparent;
-        padding: 12px 45px;
-        border-radius: 22px;
-        border: 1.5px solid #fff;
-        cursor: pointer;
-    }
-
-    .form h3 {
-        color: #222;
-        font-size: 40px;
-    }
-
-    .form span {
-        color: #3a3838;
-    }
-
-    #form_input .type {
-        width: 330px;
-        height: 48px;
-        background-color: #EEEDEF;
-        margin: 30px 0;
-    }
-
-    #form_input .type input {
-        width: 100%;
-        height: 100%;
-        padding: 0 10px;
-        font-size: 16px;
-        border: none;
-        outline: none;
-        background-color: transparent;
-    }
-
-    #form_input .type input::placeholder {
-        color: #A9A8A9;
-    }
-
-    #form_input .forgot {
-        margin-bottom: 20px;
-        font-weight: 500;
-    }
-
-    .bkg {
-        background-color: #dac991;
-    }
-</style>
 
 <body>
     <div class="container">
@@ -240,17 +237,16 @@
                 <h3>Sign In</h3>
                 <span>or use your account</span>
 
-                <form action="sgin_check.php" id="form_input">
+                <form action="sign_check.php" id="form_input" method="POST">
                     <div class="type">
-                        <input type="email" placeholder="Email" name="" id="email" required>
+                        <input type="email" placeholder="Email" name="u_email" id="email" required>
 
                     </div>
                     <div class="type">
-                        <input type="password" placeholder="Password" name="" id="password" required>
+                        <input type="password" placeholder="Password" name="u_password" id="password" required>
                     </div>
-
                     <div class="forgot">
-                        <span>Forgot your password?</span>
+                        <span>Forgot your password? </span><a href="#">Click here!</a>
                     </div>
 
                     <button name="signin_cfm" class="btn bkg">Sign In</button>
@@ -267,7 +263,6 @@
                         <input type="text" name="" placeholder="Name" id="name" required>
                     </div>
                     <div class="type">
-
                         <input type="email" name="" placeholder="Email" id="email" required>
                     </div>
                     <div class="type">
