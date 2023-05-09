@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 05, 2023 lúc 11:26 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.0.28
+-- Thời gian đã tạo: Th5 09, 2023 lúc 09:14 PM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `ingredient` (
   `Product_p_id` int(255) NOT NULL,
   `Ingredient_defaut_id_id` int(100) NOT NULL,
   `i_quantity` int(100) NOT NULL,
-  `i_unit` enum('g','ml') NOT NULL
+  `i_unit` enum('g','ml') COLLATE utf8_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
@@ -51,8 +51,6 @@ INSERT INTO `ingredient` (`i_id`, `Product_p_id`, `Ingredient_defaut_id_id`, `i_
 (51, 106, 26, 30, 'g'),
 (52, 106, 11, 8, 'g'),
 (53, 106, 20, 40, 'g'),
-(74, 116, 9, 20, 'ml'),
-(75, 116, 5, 150, 'ml'),
 (121, 134, 19, 106, 'g'),
 (122, 134, 20, 50, 'g'),
 (123, 134, 21, 50, 'g'),
@@ -102,11 +100,6 @@ INSERT INTO `ingredient` (`i_id`, `Product_p_id`, `Ingredient_defaut_id_id`, `i_
 (297, 183, 53, 10, 'g'),
 (298, 183, 21, 90, 'g'),
 (299, 183, 20, 40, 'g'),
-(307, 185, 33, 20, 'g'),
-(308, 185, 20, 40, 'g'),
-(309, 185, 21, 40, 'g'),
-(310, 185, 19, 106, 'g'),
-(311, 185, 55, 20, 'g'),
 (317, 187, 30, 10, 'g'),
 (318, 187, 53, 10, 'g'),
 (319, 187, 21, 70, 'g'),
@@ -195,7 +188,9 @@ INSERT INTO `ingredient` (`i_id`, `Product_p_id`, `Ingredient_defaut_id_id`, `i_
 (419, 208, 44, 10, 'g'),
 (420, 208, 51, 10, 'g'),
 (421, 208, 43, 10, 'g'),
-(422, 208, 42, 20, 'g');
+(422, 208, 42, 20, 'g'),
+(424, 178, 11, 1, 'g'),
+(425, 178, 10, 2, 'g');
 
 -- --------------------------------------------------------
 
@@ -209,7 +204,7 @@ CREATE TABLE `ingredient_defaut` (
   `id_import_quantity` int(255) DEFAULT NULL COMMENT 'Gốc số lượng nhập',
   `id_unit` enum('g','ml') DEFAULT NULL COMMENT 'Gốc đơn vị',
   `id_import_price` int(255) DEFAULT NULL COMMENT 'Gốc giá nhập'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `ingredient_defaut`
@@ -240,7 +235,7 @@ INSERT INTO `ingredient_defaut` (`id_id`, `id_name`, `id_import_quantity`, `id_u
 (33, 'Chanh', 336, 'ml', 22000),
 (41, 'Mứt chunky xoài', 1000, 'g', 162000),
 (42, 'Mứt chunky cherry', 1000, 'g', 195000),
-(43, 'Blue curacao', 730, 'g', 57000),
+(43, 'Blue Curacao', 730, 'g', 57000),
 (44, 'Syrup  lựu', 750, 'g', 185000),
 (45, 'Lon tép bưởi', 850, 'g', 90000),
 (46, 'suryp Vải', 700, 'g', 182000),
@@ -291,7 +286,6 @@ INSERT INTO `product` (`p_id`, `p_name`, `p_price`) VALUES
 (98, 'Coffe Americano', 30000),
 (99, 'White Coffee', 30000),
 (106, 'Hồng Trà Sữa', 40000),
-(116, 'Cam ép', 40000),
 (134, 'Yogurt Natural', 30000),
 (145, 'Chocolate Coconut', 40000),
 (153, 'Lime Juice', 40000),
@@ -306,7 +300,6 @@ INSERT INTO `product` (`p_id`, `p_name`, `p_price`) VALUES
 (179, 'Soda Số đỏ', 40000),
 (181, 'Sữa Tươi Trân Châu đường Nâu', 40000),
 (183, 'Chocomilk', 40000),
-(185, 'Blueberry Yogurt Smoothie', 45000),
 (187, 'Choco Smoothie', 45000),
 (189, 'Coffee Capuchino', 30000),
 (191, 'Coffee đá Xay Caramel', 45000),
@@ -326,6 +319,32 @@ INSERT INTO `product` (`p_id`, `p_name`, `p_price`) VALUES
 (206, 'Trà Xanh Latte', 40000),
 (207, 'Soda Galaxy ADE', 40000),
 (208, 'Fancy Berry Moon', 50000);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user`
+--
+
+CREATE TABLE `user` (
+  `u_id` int(100) NOT NULL,
+  `u_firstname` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
+  `u_lastname` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
+  `u_email` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `u_password` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
+  `u_role` enum('admin','staff') COLLATE utf8_vietnamese_ci NOT NULL,
+  `u_gender` enum('man','woman','other') COLLATE utf8_vietnamese_ci NOT NULL,
+  `u_phone` int(10) DEFAULT NULL,
+  `u_address` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`u_id`, `u_firstname`, `u_lastname`, `u_email`, `u_password`, `u_role`, `u_gender`, `u_phone`, `u_address`) VALUES
+(1, 'Phi', 'Nguyễn', 'aimabietdau1@gmail.com', '00000000', 'admin', 'man', NULL, '25 Nguyễn Thị Huỳnh Phường 11 Quận Phú Nhuận'),
+(2, 'Phương', 'Nguyễn', 'phuongnhat443@gmail.com', '11111111', 'staff', 'man', 0, 'B04 khu chung cư bộ công an cũ khu phố 4 phường An Khánh thành phố Thủ Đức TPHCM');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -352,6 +371,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`p_id`) USING BTREE;
 
 --
+-- Chỉ mục cho bảng `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`u_id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -359,7 +384,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `ingredient`
 --
 ALTER TABLE `ingredient`
-  MODIFY `i_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=423;
+  MODIFY `i_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=427;
 
 --
 -- AUTO_INCREMENT cho bảng `ingredient_defaut`
@@ -371,7 +396,13 @@ ALTER TABLE `ingredient_defaut`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `p_id` int(100) NOT NULL AUTO_INCREMENT COMMENT 'id sản phẩm', AUTO_INCREMENT=209;
+  MODIFY `p_id` int(100) NOT NULL AUTO_INCREMENT COMMENT 'id sản phẩm', AUTO_INCREMENT=210;
+
+--
+-- AUTO_INCREMENT cho bảng `user`
+--
+ALTER TABLE `user`
+  MODIFY `u_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
