@@ -1,11 +1,19 @@
 <?php
-// Phuong's config
-// $mysqli = new mysqli("localhost","root","","moon_coffee", 3306);
+// 
+// // Phuong's config
+// $servername = "localhost";
+// $username = "u234424253_moon_coffee";
+// $password = "Moon@1234";
+// $database = "u234424253_moon_coffee";
 
-// if ($mysqli -> connect_errno){
-//     header("location: db_error.php");
-//     exit(1);
+// $mysqli =  mysqli_connect($servername, $username, $password, $database);
+
+// if (!$mysqli){
+//         die("Connection failed: " . mysqli_connect_error());
 // }
+
+
+//
 
 $mysqli = mysqli_connect("localhost","root","","moon_coffee");
 if (!$mysqli) {
