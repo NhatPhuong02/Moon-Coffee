@@ -10,6 +10,12 @@
     {
         header("location: sign.php");
     }
+    if(isset($_SESSION["role"]) && $_SESSION["role"] == "admin" )
+    {
+        header("location: admin/admin_index.php");
+        exit();
+    }
+
     ?>
     <title>Welcome to Moon Coffee</title>
 </head>

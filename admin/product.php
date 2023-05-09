@@ -162,11 +162,11 @@
                     </caption>
                     <thead class="bg-light">
                         <tr>
-                            <th scope="col-1">#</th>
-                            <th scope="col-3">Image</th>
-                            <th scope="col-4">Name</th>
-                            <th class="text-center" scope="col">Price(VND)</th>
-                            <th class="text-center" scope="col">Action</th>
+                            <th class="col-1">#</th>
+                            <th class="col-5 col-sm-2 col-md-2 col-lg-1">Image</th>
+                            <th class="col-3 col-sm-2 col-md-2 col-lg-2">Name</th>
+                            <th class="col-1 col-sm-2 col-md-3 col-lg-3 text-center ">Price(VND)</th>
+                            <th class="col-2 col-sm-2 col-md-4 col-lg-4 text-center ">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -176,20 +176,20 @@
                                 <td>
                                     <?php echo $i++; ?>
                                 </td>
-                                <td class="w-25"><img src="../img/logo.png" class="img-thumbnail rounded-circle w-25"></td>
+                                <td><img src="../img/logo.png" class="img-thumbnail rounded-circle w-100 d-block"></td>
                                 <td>
                                     <?php echo $row["p_name"]; ?>
                                 </td>
                                 <td class="text-center">
                                     <?php echo number_format($row["p_price"], "0", ",", "."); ?>
                                 </td>
-                                <td class="text-center">
+                                <td class="text-center ">
                                     <a href="product_view.php?p_id=<?php echo $row["p_id"] ?>"
-                                        class="btn btn-sm btn-primary">View</a>
+                                        class="btn btn-sm btn-primary m-1">View</a>
                                     <a href="product_edit.php?p_id=<?php echo $row["p_id"] ?>"
-                                        class="btn btn-sm btn-outline-success">Edit</a>
+                                        class="btn btn-sm btn-outline-success m-1">Edit</a>
                                     <a href="product_delete.php?p_id=<?php echo $row["p_id"] ?>&value=1"
-                                        class="btn btn-sm btn-outline-danger">Delete</a>
+                                        class="btn btn-sm btn-outline-danger m-1">Delete</a>
                                 </td>
                             </tr>
                         <?php }

@@ -73,10 +73,10 @@
         </nav>
         <div class="mt-5" id="shop-body">
             <div class="row">
-                <div class="col-5 mb-3 mb-md-0 logo">
+                <div class="col-12 col-md-5 mb-3 mb-md-0 logo">
                     <img src='../img/logo.png' class="img-fluid rounded-25 float-start">
                 </div>
-                <div class="col-7 text-wrap rounded-3 mb-5" style="background-color: rgba(84, 45, 33,0.7);">
+                <div class="col-12 col-md-7 text-wrap rounded-3 mb-5" style="background-color: rgba(84, 45, 33,0.7);">
                     <div class="fs-3 mb-2 fw-bold col-6"> Thông tin thành phần</div>
 
                     <div class="row input-group m-0">
@@ -100,7 +100,7 @@
                             <div class="col-2">
                                 <input type="hidden" class="form-control" id="p_id" name="p_id"
                                     value="<?php echo $p_id ?>">
-                                <button type="submit" name="edit_cfm" class="btn btn-success w-100" si>Add</button>
+                                <button type="submit" name="edit_cfm" class="btn btn-success w-100" >Add</button>
                             </div>
                         </form>
                         <br>
@@ -114,9 +114,8 @@
                             </div>
                             <div>
                                 <table
-                                    class="table table-rounded-2 table-fixed table-light table-striped table-hover align-middle caption-top mb-2"
-                                    style=" display: inline-block;  height: 233px;  overflow-y: scroll;">
-                                    <thead class="bg-light sticky-top">
+                                    class="table rounded-2 table-light table-striped table-hover align-middle caption-top mb-2" style=" display: inline-block;  height: 233px;  overflow-y: scroll; ">
+                                    <thead class="bg-light sticky-top" style="z-index: 1;">
                                         <tr>
                                             <th scope="col-1">#</th>
                                             <th class="col-3">Name</th>
@@ -128,7 +127,7 @@
 
                                     <tbody>
                                         <?php
-                                        $query_ingredient = "SELECT i.*, id.* FROM ingredient i, ingredient_defaut id  WHERE Product_p_id = {$p_id} AND id.id_id = Ingredient_defaut_id_id";
+                                        $query_ingredient = "SELECT i.*, id.* FROM ingredient i, ingredient_defaut id  WHERE Product_p_id = {$p_id} AND id.id_id = Ingredient_defaut_id_id GROUP BY id.id_name ASC";
                                         $result_ingredient = $mysqli->query($query_ingredient);
                                         ?>
                                         <?php $i = 1;
@@ -152,7 +151,7 @@
                                                 <td>
                                                     <a href="product_delete.php?i_id=<?php echo $ingredient_row["i_id"] ?>&p_id=<?= $p_id ?>&value=2"
                                                         type="submit" name="delete_cfm"
-                                                        class="btn btn-sm btn-outline-danger w-100">Delete</a>
+                                                        class="btn btn-sm btn-outline-danger w-100" >Delete</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -163,7 +162,7 @@
                             <div class="collapse" id="collapseExample">
                                 <div class="fs-3 fw-bold">Add Ingredient</div>
                                 <table
-                                    class="table rounded-5 table-warning table-striped table-hover align-middle caption-top ">
+                                    class="table rounded-2 table-warning table-striped table-hover align-middle caption-top ">
                                     <thead class="bg-light">
                                         <tr>
                                             <th scope="col-1">#</th>

@@ -25,22 +25,21 @@
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
             </a>
         </nav>
-        <div class="row row-cols-1 row-cols-md-2 mb-5 mt-5">
-            <div class="col mb-3 mb-md-0 logo">
-                <img src='img/logo.png' class="img-fluid rounded-25 float-start">
+        <div class="row">
+            <div class="col-12 col-md-5 col-xl-6 mb-3 mb-md-0 logo text-center ">
+                <img src='../img/logo.png' class="img-fluid rounded-25 ">
             </div>
-            <div class="col text-wrap">
-                <h1 class="">
+            <div class="col-12 col-md-7 col-xl-6 text-wrap pb-4 rounded-3 " style="background-color: rgba(84, 45, 33,0.7);">
+                <div class="h2 fw-bold">
                     <?php echo $product_row["p_name"] ?>
-                </h1>
-                <h3 class="">
+                </div>
+                <div class="h3 fw-bold">
                     <?php echo number_format($product_row["p_price"], 0, ',', '.'); ?> VND
-                </h3>
-                <br>
+                </div>
                 <div class="mt-0">
                     <div class="fs-3 mb-2 fw-bold"> Danh sách thành phần</div>
-                    <table class="table rounded-5 table-light table-striped table-hover align-middle caption-top mb-5">
-                        <thead class="bg-light">
+                    <table class="table rounded-1 table-light table-striped table-hover align-middle caption-top mb-5 " style=" display: inline-block;  height: 233px;  overflow-y: scroll;">
+                        <thead class="bg-light sticky-top " style="z-index: 0;">
                             <tr>
                                 <th scope="col-1">#</th>
                                 <th scope="col-4">Name</th>
@@ -88,7 +87,7 @@
                     <input type="hidden" class="form-control" id="m_id" name="m_id" value="<?php echo $m_id ?>">
                     <a href="product_edit.php?p_id=<?= $p_id ?>" class="btn btn-success w-25" type="submit"
                         title="add to cart" name="addtocart">Edit</a>
-                    <a href="product_delete.php?p_id=<?= $p_id ?>" class="btn btn-danger w-25" type="submit"
+                    <a href="product_delete.php?p_id=<?= $p_id ?>&value=1" class="btn btn-danger w-25" type="submit"
                         title="add to cart" name="addtocart">Delete</a>
                 </div>
             </div>

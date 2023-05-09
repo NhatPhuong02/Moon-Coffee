@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top " style="background-color: #542D21;">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #542D21;">
     <div class="container" style="background-color: #542D21;">
         <a class="navbar-brand" href="#">
             <?php

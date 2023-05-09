@@ -23,7 +23,7 @@ if (isset($_POST["signin_cfm"])) {
                 
                 if($_SESSION['role'] == "admin"){
                     header("Location: admin/admin_index.php");
-                    exit(1);
+                    exit();
                 }
                 header("Location: index.php");
                 exit(1);
