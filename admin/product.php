@@ -21,12 +21,12 @@
             </a>
         </nav>
         <div class="row my-2">
-            <div class="col-4 fs-1 text-start fw-bold">Bảng Sản Phẩm</div>
-            <div class="col-8">
+            <div class="col-12 col-md-5 fs-1 text-start fw-bold">Bảng Sản Phẩm</div>
+            <div class="col-12 col-md-7">
                 <div class="row">
                     <?php
                     if (isset($_GET["add_rs"])) {
-                        if ($_GET["add_rs"] == 1) {?>
+                        if ($_GET["add_rs"] == 1) { ?>
                             <!-- START SUCCESSFULLY UPDATE PASSWORD -->
                             <div class="row row-cols notibar">
                                 <div class="col mt-2 ms-2 p-2 bg-success text-white rounded text-start w-50">
@@ -42,8 +42,8 @@
                                 </div>
                             </div>
                             <!-- END SUCCESSFULLY UPDATE PASSWORD -->
-                        <?php } 
-                        if($_GET["add_rs"] == 0) {?>
+                        <?php }
+                        if ($_GET["add_rs"] == 0) { ?>
                             <!-- START FAILED UPDATE PASSWORD -->
                             <div class="row row-cols notibar">
                                 <div class="col mt-2 ms-2 p-2 bg-danger text-white rounded text-start w-50">
@@ -59,7 +59,7 @@
                             </div>
                             <!-- END FAILED UPDATE PASSWORD -->
                         <?php }
-                        if($_GET["add_rs"] == 2) {?>
+                        if ($_GET["add_rs"] == 2) { ?>
                             <!-- START FAILED UPDATE PASSWORD -->
                             <div class="row row-cols notibar">
                                 <div class="col mt-2 ms-2 p-2 bg-danger text-white rounded text-start w-50">
@@ -116,12 +116,12 @@
                 </div>
             </div>
             <form class="form-floating mb-3" method="GET" action="product.php">
-                <div class="row g-2">
-                    <div class="col">
+                <div class="row flex-colume-reverse flex-md-row">
+                    <div class="col-sm-12 col-md-7">
                         <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Product name"
                             <?php if (isset($_GET["search"])) { ?>value="<?php echo $_GET["p_name"]; ?>" <?php } ?>>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-sm-12 col-md-5 text-end px-0">
                         <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
                         <button type="reset" class="btn btn-danger"
                             onclick="javascript: window.location='product.php'">Clear</button>
