@@ -3,6 +3,7 @@
 
 <head>
     <?php
+    session_start();
     include("../system/head.php");
     include("../system/conn_db.php");
     $num;

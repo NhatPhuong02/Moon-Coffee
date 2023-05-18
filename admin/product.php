@@ -16,7 +16,8 @@
     ?>
     <div class="container pt-5">
         <nav aria-label="breadcrumb" class="d-flex">
-            <a class="nav nav-item text-decoration-none text-muted mb-2" href="index.php" onclick="history.back();">
+            <a class="nav nav-item text-decoration-none text-muted mb-2" href="admin_index.php"
+                onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
             </a>
         </nav>
@@ -115,17 +116,19 @@
                     ?>
                 </div>
             </div>
-            <form class="form-floating mb-3" method="GET" action="product.php">
-                <div class="row flex-colume-reverse flex-md-row">
-                    <div class="col-sm-12 col-md-7">
+            <form class="form-floating mb-1" method="GET" action="product.php">
+                <div class="row "> <!-- flex-row-reverse flex-colume -->
+                    <div class="mt-2 col-sm-12 col-md-10 col-lg-10">
+                        <div class="input-group">
                         <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Product name"
                             <?php if (isset($_GET["search"])) { ?>value="<?php echo $_GET["p_name"]; ?>" <?php } ?>>
+                            <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
+                            <button type="reset" class="btn btn-danger" type="button"
+                                onclick="javascript: window.location='product.php'">Clear</button>
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-5 text-end px-0">
-                        <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
-                        <button type="reset" class="btn btn-danger"
-                            onclick="javascript: window.location='product.php'">Clear</button>
-                        <a href="product_add.php?p_value=1" class="btn btn-primary">Add Product</a>
+                    <div class="mt-2 col-sm-12 col-md-2 col-lg-2 text-end px-md-0">
+                        <a href="product_add.php?p_value=1" class="btn btn-primary w-100">Add Product</a>
                     </div>
                 </div>
             </form>

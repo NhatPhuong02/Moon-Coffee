@@ -21,20 +21,22 @@
             </a>
         </nav>
         <div class="fs-1 text-start fw-bold my-2"><span>Bảng Nguyên Liệu</span></div>
-        <form class="form-floating mb-3" method="GET" action="ingredient.php">
-            <div class="row g-2">
-                <div class="col">
-                    <input type="text" class="form-control" id="id_name" name="id_name" placeholder="Ingredient name"
-                        <?php if (isset($_GET["search"])) { ?>value="<?php echo $_GET["id_name"]; ?>" <?php } ?>>
+        <form class="form-floating mb-1" method="GET" action="product.php">
+                <div class="row "> <!-- flex-row-reverse flex-colume -->
+                    <div class="mt-2 col-sm-12 col-md-10 col-lg-10">
+                        <div class="input-group">
+                        <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Ingredient name"
+                            <?php if (isset($_GET["search"])) { ?>value="<?php echo $_GET["p_name"]; ?>" <?php } ?>>
+                            <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
+                            <button type="reset" class="btn btn-danger" type="button"
+                                onclick="javascript: window.location='ingredient.php'">Clear</button>
+                        </div>
+                    </div>
+                    <div class="mt-2 col-sm-12 col-md-2 col-lg-2 text-end px-md-0">
+                        <a href="ingredient_add.php?p_value=1" class="btn btn-primary w-100">+ Ingredient</a>
+                    </div>
                 </div>
-                <div class="col-auto">
-                    <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
-                    <button type="reset" class="btn btn-danger"
-                        onclick="javascript: window.location='ingredient.php'">Clear</button>
-                    <a href="ingredient_add.php" class="btn btn-primary">Add Ingredient</a>
-                </div>
-            </div>
-        </form>
+            </form>
 
         <?php
         if (!isset($_GET["search"])) {
