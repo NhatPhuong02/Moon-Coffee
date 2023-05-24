@@ -27,7 +27,7 @@
                     if (isset($_SESSION["id"]) && $_SESSION["role"] == "admin") { ?>
                         <a class="nav-link" style="color: #dac991" href="product.php">Product</a>
                     <?php } else { ?>
-                        <a class="nav-link" style="color: #dac991" href="#">Home</a>
+                        <a class="nav-link" style="color: #dac991" href="#">Product</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item fw-bold fs-4 mx-3">
@@ -35,13 +35,13 @@
                     if (isset($_SESSION["id"]) && $_SESSION["role"] == "admin") { ?>
                         <a class="nav-link" style="color: #dac991" href="ingredient.php">Ingredient</a>
                     <?php } else { ?>
-                        <a class="nav-link" style="color: #dac991" href="#">Home</a>
+                        <a class="nav-link" style="color: #dac991" href="#">Service</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item fw-bold fs-4 mx-3">
                     <?php
                     if (!isset($_SESSION["firstname"])) { ?>
-                        <a class="nav-link" style="color: #dac991" href="../sign.php">Login</a>
+                        <a class="nav-link" style="color: #dac991" href="sign.php">Login</a>
                     <?php } else { ?>
                         <?php
                         if (isset($_SESSION["id"]) && $_SESSION["role"] == "admin") { ?>

@@ -19,34 +19,38 @@
     <?php
     include("system/header.php");
     ?>
-    <div class="container-fluid p-0 mb-5">
-        <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
-                        <h1 class="display-1 text-white m-0">COFFEE</h1>
-                        <h2 class="text-white m-0">* SINCE 1950 *</h2>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
-                        <h1 class="display-1 text-white m-0">COFFEE</h1>
-                        <h2 class="text-white m-0">* SINCE 1950 *</h2>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#blog-carousel" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+    <div class="container-fluid position-relative" id="home" style="
+            
+                background-size: cover;
+
+                background-image: linear-gradient(to right, rgb(236 98 6 / 80%), rgb(5 3 0 / 83%)),
+                    url(https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?cs=srgb&dl=pexels-igor-haritanovich-1695052.jpg&fm=jpg);
+                background-repeat: no-repeat,
+                    no-repeat,
+                    no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                min-height: 400px;
+            ">
+        <div class="bg-opacity-50 w-75 text-center py-2 px-4 rounded-5 position-absolute top-50 start-50 translate-middle mt-1"
+            id="content">
+            <style>
+                #content {
+                    background-color: rgba(84, 45, 33, 0.5);
+                    color: #dac991;
+                }
+            </style>
+            <h3>Welcome to Moon Coffee</h3>
+            <h5>Your saticfaction is our motivation</h5>
+            <button type="button" class="btn btn-outline-warning btn-lg ">Read More</button>
+            
         </div>
+
+
     </div>
+
+
+
     <?php
     include("system/footer.php");
     ?>
