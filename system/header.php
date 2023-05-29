@@ -19,7 +19,7 @@
                     if (isset($_SESSION["id"]) && $_SESSION["role"] == "admin") { ?>
                         <a class="nav-link" style="color: #dac991" href="admin_index.php">Home</a>
                     <?php } else { ?>
-                        <a class="nav-link" style="color: #dac991" href="#">Home</a>
+                        <a class="nav-link" style="color: #dac991" href="index.php">Home</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item fw-bold fs-4 mx-3">
