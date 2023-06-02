@@ -1,4 +1,4 @@
-<header id="navbar" class="position-fixed w-100">
+<header id="navbar" class="container-fluid position-fixed w-100">
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <?php
