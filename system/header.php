@@ -77,3 +77,21 @@
         transition: top 0, 5s linear;
     }
 </style>
+<script>
+    $(window).bind('mousewheel', function (event) {
+        if (event.originalEvent.wheelDelta >= 0) {
+            //scroll up
+            document.getElementById("navbar").style.top = "0";
+            if (window.pageYOffset <= 10) {
+                document.getElementById("navbar").style.backgroundColor = "rgb(84, 45, 33, 0)";
+            }
+            else {
+                document.getElementById("navbar").style.backgroundColor = "rgb(84, 45, 33)";
+            }
+        }
+        else {
+            //scroll down
+            document.getElementById("navbar").style.top = "-100%";
+        }
+    });
+</script>

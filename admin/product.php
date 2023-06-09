@@ -4,8 +4,8 @@
 <head>
     <?php
     session_start();
-    include("../system/head.php");
     include("../system/conn_db.php");
+    include("../system/head.php");
     ?>
     <title>Moon Coffee's Product</title>
 </head>
@@ -14,15 +14,15 @@
     <?php
     include("../system/header.php");
     ?>
-    <div class="container pt-5">
-        <nav aria-label="breadcrumb" class="d-flex">
+    <section class="container pt-5">
+        <nav aria-label="breadcrumb" class="d-flex mt-5 pt-5">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="admin_index.php"
                 onclick="history.back();">
-                <i class="bi bi-arrow-left-square me-2"></i>Go back
+                <i class="bi bi-arrow-left-square me-2 "></i>Go back
             </a>
         </nav>
         <div class="row my-2">
-            <div class="col-12 col-md-5 fs-1 text-start fw-bold">Bảng Sản Phẩm</div>
+            <div class="col-12 col-md-5 fs-1 text-start fw-bold moon">Bảng Sản Phẩm</div>
             <div class="col-12 col-md-7">
                 <div class="row">
                     <?php
@@ -120,8 +120,8 @@
                 <div class="row "> <!-- flex-row-reverse flex-colume -->
                     <div class="mt-2 col-sm-12 col-md-10 col-lg-10">
                         <div class="input-group">
-                        <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Product name"
-                            <?php if (isset($_GET["search"])) { ?>value="<?php echo $_GET["p_name"]; ?>" <?php } ?>>
+                            <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Product name"
+                                <?php if (isset($_GET["search"])) { ?>value="<?php echo $_GET["p_name"]; ?>" <?php } ?>>
                             <button type="submit" name="search" value="1" class="btn btn-success">Search</button>
                             <button type="reset" class="btn btn-danger" type="button"
                                 onclick="javascript: window.location='product.php'">Clear</button>
@@ -200,7 +200,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </section>
     <?php
     include("../system/footer.php");
     ?>

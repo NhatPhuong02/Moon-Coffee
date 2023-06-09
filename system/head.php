@@ -16,5 +16,5 @@ if (isset($_SESSION["id"]) && $_SESSION["role"] == "admin") { ?>
     <link rel="stylesheet" href="../css/style.css">
 <?php } else { ?>
     <link rel="stylesheet" href="css/style.css">
-<?php }
-?>
+<?php }?>
+

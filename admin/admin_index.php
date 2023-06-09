@@ -138,16 +138,6 @@
     <?php
     include("../system/footer.php");
     ?>
-    <script>
-    window.onscroll = function () { scrollFunction() };
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("navbar").style.top = "-100%";
-        } else {
-            document.getElementById("navbar").style.top = "0";
-        }
-    }
-</script>
 </body>
 
 </html>

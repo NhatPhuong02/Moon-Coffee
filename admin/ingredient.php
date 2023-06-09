@@ -4,8 +4,8 @@
 <head>
     <?php
     session_start();
-    include("../system/head.php");
     include("../system/conn_db.php");
+    include("../system/head.php");
     ?>
     <title>Moon Coffee's Ingredient</title>
 </head>
@@ -15,12 +15,12 @@
     include("../system/header.php");
     ?>
     <div class="container pt-5">
-        <nav aria-label="breadcrumb" class ="d-flex">
+        <nav aria-label="breadcrumb" class ="d-flex pt-5 mt-5">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
             </a>
         </nav>
-        <div class="fs-1 text-start fw-bold my-2"><span>Bảng Nguyên Liệu</span></div>
+        <div class="fs-1 text-start fw-bold my-2 moon"><span>Bảng Nguyên Liệu</span></div>
         <form class="form-floating mb-1" method="GET" action="product.php">
                 <div class="row "> <!-- flex-row-reverse flex-colume -->
                     <div class="mt-2 col-sm-12 col-md-10 col-lg-10">
