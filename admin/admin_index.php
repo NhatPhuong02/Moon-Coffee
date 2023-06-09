@@ -32,7 +32,7 @@
                     height: 500px;
                 }
             </style>
-            <div class="mx-5 container">
+            <div class="mx-5 container-lg">
                 <div class="row mx-5 px-5">
                     <div class="col-6"
                         style="color: #dac991; font-family: Quicksand;">
@@ -82,7 +82,7 @@
                     </style>
                 </div>
                 <div class="col-6">
-                    <div class="container px-5 pt-5">
+                    <div class="container-lg px-5 pt-5">
                         <div class="fs-6 my-2"
                             style="font-family: Pacifico; color:#fff">More than
                             30 drinks</div>

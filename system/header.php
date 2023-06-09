@@ -1,6 +1,6 @@
 <header id="navbar" class="container-fluid position-fixed w-100">
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
+        <div class="container-lg">
             <?php
             if (isset($_SESSION["id"]) && $_SESSION["role"] == "admin") { ?>
                 <a class="navbar-brand" href="#">

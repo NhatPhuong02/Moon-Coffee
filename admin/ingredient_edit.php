@@ -37,7 +37,7 @@
     $ingredient_row = $result_ingredient->fetch_array();
     ?>
     
-    <div class="container pt-5" id="shop-body">
+    <div class="container-lg pt-5" id="shop-body">
         <nav aria-label="breadcrumb" class ="d-flex">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="#" onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back

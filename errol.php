@@ -16,7 +16,7 @@
         $text = $_GET["text"];
     }
     ?>
-    <div class="container my-5 h-100 justify-content-center grid-content-center">
+    <div class="container-lg my-5 h-100 justify-content-center grid-content-center">
 
         <h5 class="card-title text-danger fw-bold">
             <?php

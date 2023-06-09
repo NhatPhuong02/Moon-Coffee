@@ -231,7 +231,7 @@
 
 
 <body>
-    <div class="container">
+    <div class="container container-lg">
         <div class="box">
             <div class="form sign_in">
                 <h3>Sign In</h3>

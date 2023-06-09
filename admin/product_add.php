@@ -153,7 +153,7 @@
     <?php
     include("../system/header.php");
     ?>
-    <div class="container pt-5">
+    <div class="container-lg pt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>

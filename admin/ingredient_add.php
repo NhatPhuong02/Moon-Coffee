@@ -28,7 +28,7 @@
     <?php
     include("../system/header.php");
     ?>
-    <div class="container pt-5">
+    <div class="container-lg pt-5">
         <nav aria-label="breadcrumb" class ="d-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
@@ -38,7 +38,7 @@
             </ol>
         </nav>
     </div>
-    <div class="container mt-5 pt-2 w-50 bg-light rounded-3">
+    <div class="container-lg mt-5 pt-2 w-50 bg-light rounded-3">
         <form action="ingredient_add.php" method="POST">
             <div class="row mt-1 ">
                 <div class="col-7">

@@ -65,7 +65,7 @@
     $result_product = $mysqli->query($query_product);
     $product_row = $result_product->fetch_array();
     ?>
-    <div class="container pt-5">
+    <div class="container-lg pt-5">
         <nav aria-label="breadcrumb" class="d-flex">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="product.php" onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
@@ -112,7 +112,6 @@
                                         value="<?php echo $p_id ?>">
                                 </div>
                             </div>
-                            <div>
                                 <table
                                     class="table rounded-2 table-light table-striped table-hover align-middle caption-top mb-2" style=" display: inline-block;  height: 233px;  overflow-y: scroll; ">
                                     <thead class="bg-light sticky-top" style="z-index: 1;">
@@ -151,13 +150,12 @@
                                                 <td>
                                                     <a href="product_delete.php?i_id=<?php echo $ingredient_row["i_id"] ?>&p_id=<?= $p_id ?>&value=2"
                                                         type="submit" name="delete_cfm"
-                                                        class="btn btn-sm btn-outline-danger w-100" >Delete</a>
+                                                        class="btn btn-sm btn-outline-danger w-100 z-0" >Delete</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
                                 </table>
-                            </div>
 
                             <div class="collapse" id="collapseExample">
                                 <div class="fs-3 fw-bold">Add Ingredient</div>

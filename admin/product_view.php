@@ -19,7 +19,7 @@
     $result_product = $mysqli->query($query_product);
     $product_row = $result_product->fetch_array();
     ?>
-    <div class="container pt-5" id="shop-body">
+    <div class="container-lg pt-5" id="shop-body">
         <nav aria-label="breadcrumb" class ="d-flex">
             <a class="nav nav-item text-decoration-none text-muted mb-2" href="product.php" onclick="history.back();">
                 <i class="bi bi-arrow-left-square me-2"></i>Go back
