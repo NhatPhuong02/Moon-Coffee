@@ -137,6 +137,9 @@
 
         </div>
     </section>
+    <section class="container-fluid text-center" style="background-color:#dac991;">
+        <span class="fs-3">Our Menu</span>
+    </section>
 
     <?php
     include("system/footer.php");

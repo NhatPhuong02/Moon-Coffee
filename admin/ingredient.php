@@ -63,7 +63,7 @@
         <?php } else { ?>
             <table
                 class="mt-2 table rounded-2 table-hover  table-light table-striped table-hover align-middle caption-top mb-5">
-                <caption>
+                <caption class="text-white" >
                     <?php echo $row_num; ?> Ingredient(s)
                     <?php if (isset($_GET["search"])) { ?><br /><a href="ingredient.php"
                             class="text-decoration-none text-danger">Clear Search Result</a>
